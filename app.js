@@ -9,6 +9,8 @@ const exphbs = require('express-handlebars');
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const flash = require('connect-flash')
+const FlashMessenger = require('flash-messenger')
  // Library to use MySQL to store session objects
 // const MySQLStore = require('express-mysql-session');
 // const db = require('./config/db'); // db.js config file
@@ -67,6 +69,8 @@ app.use(session({
 	resave: false,
 	saveUninitialized: false,
 }));
+
+app.use(FlashMessenger.middleware);
 
 // Place to define global variables - not used in practical 1
 app.use(function (req, res, next) {
