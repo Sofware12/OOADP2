@@ -23,7 +23,7 @@ router.get('/showRegister', (req, res) => {
 //Yusuf's 
 
 router.get('/Lights', (req, res) => {
-	res.render('views/Lights/Lightss') // renders views/register.handlebars
+	res.render('Lights/Lightss') // renders views/register.handlebars
 });
 
 
