@@ -26,5 +26,14 @@ router.get('/Lights', (req, res) => {
 	res.render('Lights/Lightss') // renders views/register.handlebars
 });
 
+//Xavier's
+
+router.get('/home', (req,res) => {
+	res.render('home/home') //renders views/home.handlebars
+});
+
+router.get('/Curtain', (req, res) => {
+	res.render('curtain/curtain') // renders views/curtain.handlebars
+});
 
 module.exports = router;
