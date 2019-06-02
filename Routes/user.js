@@ -1,5 +1,23 @@
 const express = require('express');
 const router = express.Router();
+const User = require('../models/User');
+const alertMessage = require('../helpers/messanger');
+const passport = require('passport')
+
+
+
+// Login Form POST => /user/login
+router.post('/login', (req, res, next) => {
+    passport.authenticate('local', {
+        successRedirect: '/home/home', // Route to /video/listVideos URL
+        failureRedirect: '/showLogin', // Route to /login URL
+        failureFlash: true
+        /* Setting the failureFlash option to true instructs Passport to flash an error
+        message using the message given by the strategy's verify callback, if any.
+        When a failure occur passport passes the message object as error */
+    })(req, res, next);
+});
+
 
 // User register URL using HTTP post => /user/register
 router.post('/register', (req, res) => {
@@ -27,9 +45,34 @@ router.post('/register', (req, res) => {
         })
         // res.send({ redirect: '/showRegister' })
     } else {
-        res.render('./user/login', {
-            success_msg: success_msg
-        })
+        // If all is well, checks if user is already registered
+        User.findOne({ where: { email: req.body.email } })
+            .then(user => {
+                if (user) {
+                    // If user is found, that means email has already been
+                    // registered
+                    res.render('user/register', {
+                        error: user.email + ' already registered',
+                        name,
+                        email,
+                        password,
+                        password2
+                    });
+                } else {
+                    // Encrypt the password
+                    var salt = bcrypt.genSaltSync(10);
+                    var hashedPassword = bcrypt.hashSync(password, salt);
+                    password = hashedPassword;
+
+                    // Create new user record
+                    User.create({ name, email, password })
+                        .then(user => {
+                            alertMessage(res, 'success', user.name + ' added. Please login', 'fas fa-sign-in-alt', true);
+                            res.redirect('/showLogin');
+                        })
+                        .catch(err => console.log(err));
+                }
+            });
     }
 });
 
