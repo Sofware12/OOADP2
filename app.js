@@ -12,6 +12,7 @@ const bodyParser = require('body-parser');
 const flash = require('connect-flash');
 const FlashMessenger = require('flash-messenger');// Library to use MySQL to store session objects
 const MySQLStore = require('express-mysql-session');
+const smartlivingDB = require('./config/DBConnection');
 const db = require('./config/db'); // db.js config file
 const passport = require('passport'); 
 /*
@@ -21,6 +22,7 @@ const passport = require('passport');
 const mainRoute = require('./routes/main');
 const userRoute = require('./routes/user');
 
+smartlivingDB.setUpDB(false);
 /*
 * Creates an Express server - Express is a web application framework for creating web applications
 * in Node JS.
