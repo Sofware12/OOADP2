@@ -5,7 +5,7 @@ body{
     background-size:cover;
     font-family: sans-serif;
 }
-.loginbox{
+.registerbox{
     width: 380px;
     height: 350px;
     color: #ffe6e6;
@@ -14,7 +14,7 @@ body{
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
-    padding: 70px 20px;
+    padding: 70px 30px;
 }
 img#avatar {
     width: 100px;
@@ -27,41 +27,38 @@ img#avatar {
 h1{
     margin: 0;
     padding: 0 0 20px;
-    text-align: center;
     font-size: 22px;
 }
-.loginbox label{
+.registerbox label{
     margin: 0;
     padding: 0;
     font-weight: bold;
 }
-.loginbox input{
+.registerbox input{
     padding: 5px;
     width: 100%;
     margin-bottom: 20px;
 }
-.loginbox input[type="submit"], input[type="text"]{
+.registerbox input[type="submit"], input[type="text"]{
     border: none;
     height: 35px;
     outline: none;
 }
-label{
-    display: inline-block;
-    width: 60%;
-    padding: 1px 35px 15px 30px;
-}
-.loginbox input[type="submit"]{
+.registerbox input[type="submit"]{
     border: none;
     outline: none;
-    height: 50px;
+    height: 40px;
     background: #fb2525;
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 20px;
     width: 100%;
 }
-.loginbox input[type="submit"]:hover{
+.registerbox input[type="submit"]:hover{
     cursor: pointer;
     background: #ffc107;
     color: #000;
+}
+.registerbox a:hover{
+    color: #ffc107;
 }
