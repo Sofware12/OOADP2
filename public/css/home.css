@@ -1,0 +1,46 @@
+body{
+    background-image: url(bright.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.home_buttons_groups{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home_button {
+    width: 30%;
+    float: left;
+    text-align: center;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button#airCon {
+    border-radius: 30px;
+    background-image:url(icon\ back.jpg);
+    background-position:top center;
+    position: absolute;
+}
+
+button#cctv {
+    border-radius: 30px;
+    background-image:url(icon\ back.jpg);
+    background-position:top center;
+    position: absolute;
+}
+
+button#curtain {
+    border-radius: 30px;
+    background-image:url(icon\ back.jpg);
+    background-position:top center;
+    position: absolute;
+}
+
+button#lights {
+    border-radius: 30px;
+    background-image:url(icon\ back.jpg);
+    background-position:top center;
+    position: absolute;
+}
