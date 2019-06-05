@@ -1,0 +1,36 @@
+h1 {
+    text-align: center
+}
+#box img {
+	width: 100px;
+	height: 100px;
+	/* border: 1px solid white; */
+	margin: 5px;
+}
+
+#box {
+	width: 800px;
+	height: 120px;
+	background-color: green;
+	margin: auto;
+	border-radius: 20px;
+	text-align: center ;
+}
+
+	#box button {
+		display: inline-block;
+		height: 120px;
+		margin: 2px;
+	}
+
+	#box img:hover {
+		border: 5pxbsolid black;
+	}
+
+#SelectedPosition {
+	width: 400px;
+	height: 350px;
+	display: block;
+	margin: auto;
+	border: 1px solid green;
+}
