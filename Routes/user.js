@@ -3,13 +3,14 @@ const router = express.Router();
 const User = require('../models/User');
 const alertMessage = require('../helpers/messanger');
 const passport = require('passport')
+var bcrypt = require('bcryptjs')
 
 
 
 // Login Form POST => /user/login
 router.post('/login', (req, res, next) => {
     passport.authenticate('local', {
-        successRedirect: '/home/home', // Route to /video/listVideos URL
+        successRedirect: '/home', // Route to /home URL
         failureRedirect: '/showLogin', // Route to /login URL
         failureFlash: true
         /* Setting the failureFlash option to true instructs Passport to flash an error
@@ -23,8 +24,8 @@ router.post('/login', (req, res, next) => {
 router.post('/register', (req, res) => {
     let errors = []
     let success_msg = '✔ User successfully created!';
+    let {name, email, password, password2 } = req.body;
 
-    var password = req.body.password;
     if (password.length < 4) {
         errors.push({ text: "Password must be at least 4 characters!" })
     }

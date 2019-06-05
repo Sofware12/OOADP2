@@ -9,7 +9,7 @@ body{
 }
 
 .home_button {
-    width: 30%;
+    width: 50%;
     float: left;
     text-align: center;
     margin-top: 10%;
@@ -21,26 +21,22 @@ button#airCon {
     border-radius: 30px;
     background-image:url(icon\ back.jpg);
     background-position:top center;
-    position: absolute;
 }
 
 button#cctv {
     border-radius: 30px;
     background-image:url(icon\ back.jpg);
     background-position:top center;
-    position: absolute;
 }
 
 button#curtain {
     border-radius: 30px;
     background-image:url(icon\ back.jpg);
     background-position:top center;
-    position: absolute;
 }
 
 button#lights {
     border-radius: 30px;
     background-image:url(icon\ back.jpg);
     background-position:top center;
-    position: absolute;
 }
