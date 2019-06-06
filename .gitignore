@@ -1,0 +1,11 @@
+# Ignore folder named 'node_modules'
+node_modules/
+
+# Ignore folder named 'config'
+config/
+
+# Ignore file named 'package-lock'
+package-lock.json
+
+# Ignore file named 'package'
+package.json
