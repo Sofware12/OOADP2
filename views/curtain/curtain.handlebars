@@ -1,15 +1,26 @@
 <link rel="stylesheet" href="css/curtain.css">
 <script>
-    function showPicture(theImg) {
-        document.getElementById("SelectedPosition").src=
+    function showPicture() {
+        if (document.getElementById("SelectedPosition").src == "../css/open.png")
+        {
+            document.getElementById("SelectedPosition").src == "../css/open.png";
+        }
+        elif (document.getElementById("SelectedPosition").src == "../css/half.png")
+        {
+            document.getElementById("SelectedPosition").src == "../css/half.png";
+        }
+        else
+        {
+            document.getElementById("SelectedPosition").src == "../css/covered";
+        }
     }
 </script>
 <h1>Curtain Controls</h1>
 <img id="SelectedPosition" src="../css/half.png"/>
 <div id="box">
     <ul>
-        <button><img src="../css/open.png" onclick="showPicture(this) ;"/> </button>
-        <button><img src="../css/half.png" onclick="showPicture(this) ;"/> </button>
-        <button><img src="../css/covered.png" onclick="showPicture(this) ;"/> </button>
+        <button><img src="../css/open.png" onclick="showPicture()"/> </button>
+        <button><img src="../css/half.png" onclick="showPicture()"/> </button>
+        <button><img src="../css/covered.png" onclick="showPicture()"/> </button>
     </ul>
 </div>
