@@ -22,8 +22,8 @@ router.get('/showRegister', (req, res) => {
 
 //Yusuf's 
 
-router.get('/Lights', (req, res) => {
-	res.render('Lights/Lightss') // renders views/register.handlebars
+router.get('/lights', (req, res) => {
+	res.render('Lights/Lightss') // renders views/Lightss.handlebars
 });
 
 //Xavier's
@@ -35,5 +35,13 @@ router.get('/home', (req,res) => {
 router.get('/Curtain', (req, res) => {
 	res.render('curtain/curtain') // renders views/curtain.handlebars
 });
+
+router.get('/cctv', (req, res) => {
+	res.render('cctv/cctv') //renders views/cctv.handlebars
+})
+
+router.get('/aircon', (req,res) =>{
+	res.render('airCon/aircon') //renders views/aircon.handlebars
+})
 
 module.exports = router;
