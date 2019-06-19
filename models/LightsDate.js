@@ -3,15 +3,11 @@ const db = require('../config/DBConfig');
 /* Creates a user(s) table in MySQL Database.
 Note that Sequelize automatically pleuralizes the entity name as the table name
 */
-const Light = db.define('Light1', {
+const Light = db.define('Lights_ID', {
 
-    date: {
-        type: Sequelize.DATE
-    },
-    
-    state:{
+    Light_number: {
         type: Sequelize.INTEGER
-    }
+    },
     
 });
 module.exports = Light;
