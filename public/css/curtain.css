@@ -1,36 +1,28 @@
+body{
+    background-image: url(spaceback.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Raleway', sans-serif;
+    padding: 1em 2em;
+    font-size: 18px;
+}
 h1 {
-    text-align: center
+    font-weight: 200;
+    margin: 0.4em 0;
+    font-size: 4.5em; 
+    text-align: center;
+    color: rgb(0, 195, 255);
 }
-#box img {
-	width: 100px;
-	height: 100px;
-	/* border: 1px solid white; */
-	margin: 5px;
-}
-
-#box {
-	width: 800px;
-	height: 120px;
-	background-color: green;
-	margin: auto;
-	border-radius: 20px;
-	text-align: center ;
+.curtain_buttons_groups{
+    margin-left: auto;
+    margin-right: auto;
 }
 
-	#box button {
-		display: inline-block;
-		height: 120px;
-		margin: 2px;
-	}
-
-	#box img:hover {
-		border: 5pxbsolid black;
-	}
-
-#SelectedPosition {
-	width: 400px;
-	height: 350px;
-	display: block;
-	margin: auto;
-	border: 1px solid green;
+.curtain_button {
+    width: 50%;
+    text-align: center;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
 }

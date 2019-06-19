@@ -36,6 +36,15 @@ router.get('/Curtain', (req, res) => {
 	res.render('curtain/curtain') // renders views/curtain.handlebars
 });
 
+router.get('/curtainControl', (req, res) => {
+	res.render('curtain/cControl') // renders views/cControl.handlebars
+});
+
+router.get('/curtainTimed', (req, res) => {
+	res.render('curtain/cTimed') // renders views/cTimed.handlebars
+});
+
+
 router.get('/cctv', (req, res) => {
 	res.render('cctv/cctv') //renders views/cctv.handlebars
 })

@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="css/cControl.css">
+<script>
+    function showPicture(img) {
+        document.getElementById("SelectedPosition").src = img;
+    }
+    var i = 0;
+    function buttonClick1() {
+        document.getElementById('inc').value = ++i;
+    }
+    function buttonClick2() {
+        document.getElementById('inc').value = ++i;
+    }
+</script>
+<body>
+    <div id="cControl">
+        <img id="left" src="../css/arrow.gif" onclick="buttonClick1()">
+        <input type="text" id="inc" value="0">
+        <img id="SelectedPosition" src="../css/half.png" />
+        <img id="right" src="../css/arrow.gif" onclick="buttonClick2()">
+        <div id="box">
+            <ul>
+                <button id="button"><img src="../css/open.png" onclick="showPicture(this.src)" /> </button>
+                <button id="button"><img src="../css/half.png" onclick="showPicture(this.src)" /> </button>
+                <button id="button"><img src="../css/covered.png" onclick="showPicture(this.src)" /> </button>
+            </ul>
+        </div>
+    </div>
+</body>

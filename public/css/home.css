@@ -2,6 +2,8 @@ body{
     background-image: url(bright.gif);
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 1em 2em;
+    font-size: 18px;
 }
 .home_buttons_groups{
     margin-left: auto;
