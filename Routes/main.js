@@ -44,7 +44,6 @@ router.get('/curtainTimed', (req, res) => {
 	res.render('curtain/cTimed') // renders views/cTimed.handlebars
 });
 
-
 router.get('/cctv', (req, res) => {
 	res.render('cctv/cctv') //renders views/cctv.handlebars
 })
