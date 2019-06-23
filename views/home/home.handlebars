@@ -1,21 +1,75 @@
 <link rel="stylesheet" href="css/home.css">
+<script>
+    $(document).ready(function () {
+
+        // Get Location 
+        navigator.geolocation.getCurrentPosition(success, error);
+
+        function success(pos) {
+            var lat = pos.coords.latitude;
+            var long = pos.coords.longitude;
+            weather(lat, long);
+        }
+
+        function error() {
+            console.log('There was an error');
+        }
+
+        // Call Weather
+        function weather(lat, long) {
+            var URL = `https://fcc-weather-api.glitch.me/api/current?lat=${lat}&lon=${long}`;
+
+            $.getJSON(URL, function (data) {
+                updateDOM(data);
+            });
+        }
+
+        // Update Dom
+        function updateDOM(data) {
+            var city = data.name;
+            var temp = Math.round(data.main.temp_max);
+            var desc = data.weather[0].description;
+            var icon = data.weather[0].icon;
+
+            $('#city').html(city);
+            $('#temp').html(temp);
+            $('#desc').html(desc);
+            $('#icon').attr('src', icon);
+        }
+    });
+</script>
+
 <body>
     <div class="home_buttons_groups">
-        <div class="home_button">
-            <a href="/aircon"><button type="button" id="airCon"><img src="../css/aircon.png" width="150" height="150"></button></a>
+        <div class="home_button_aircon">
+            <a href="/aircon"><button type="button" id="airCon"><img src="../css/aircon.png" width="150"
+                        height="150"></button></a>
         </div>
 
-        <div class="home_button">
-            <a href="/cctv"><button type="button" id="cctv"><img src="../css/cctv.png" width="150" height="150"></button></a>
+        <div class="home_button_cctv">
+            <a href="/cctv"><button type="button" id="cctv"><img src="../css/cctv.png" width="150"
+                        height="150"></button></a>
         </div>
 
-        <div class="home_button">
-            <a href="/curtain"><button type="button" id="curtain"><img src="../css/curtain.png" width="150" height="150"></button></a>
+        <div class="home_button_curtain">
+            <a href="/curtain"><button type="button" id="curtain"><img src="../css/curtain.png" width="150"
+                        height="150"></button></a>
         </div>
 
-        <div class="home_button">
-            <a href="/lights"><button type="button" id="lights"><img src="../css/light.png" width="150" height="150"></button></a>
+        <div class="home_button_lights">
+            <a href="/lights"><button type="button" id="lights"><img src="../css/light.png" width="150"
+                        height="150"></button></a>
+        </div>
+    </div>
+    <div class="container" id="apibox">
+        <h2 id="city">Singapore</h2>
+        <div class="mid">
+            <img src="" alt="icon" id="icon">
+            <div class="degrees">
+                <h1 id="temp">31</h1>
+                <span>&#176;</span>
+            </div>
+            <h3 id="desc">Sunny</h3>
         </div>
     </div>
 </body>
- 
