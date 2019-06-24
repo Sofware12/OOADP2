@@ -15,6 +15,9 @@ const MySQLStore = require('express-mysql-session');
 const smartlivingDB = require('./config/DBConnection');
 const db = require('./config/db'); // db.js config file
 const passport = require('passport'); 
+
+
+
 /*
 * Loads routes file main.js in routes directory. The main.js determines which function
 * will be called based on the HTTP request and URL.
@@ -47,6 +50,7 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 app.set('views',path.join(__dirname,'views'))
 
+const Lighttiming= require('./models/LightsDate')
 
 // Body parser middleware to parse HTTP body in order to read HTTP data
 app.use(bodyParser.urlencoded({
@@ -99,12 +103,24 @@ app.use(function (req, res, next) {
 app.use('/', mainRoute); // mainRoute is declared to point to routes/main.js
 // This route maps the root URL to any path defined in main.js
 app.use('/user', userRoute); // mainRoute is declared to point to routes/main.js
+//
+
+
+
+
+
+
 
 /*
 * Creates a unknown port 5000 for express server since we don't want our app to clash with well known
 * ports such as 80 or 8080.
 * */
 const port = 5000;
+
+
+
+
+
 
 // Starts the server and listen to port 5000
 app.listen(port, () => {
