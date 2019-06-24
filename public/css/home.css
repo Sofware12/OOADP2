@@ -2,6 +2,8 @@ body{
     background-image: url(bright.gif);
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 1em 2em;
+    font-size: 18px;
 }
 .home_buttons_groups{
     margin-left: auto;
@@ -21,22 +23,55 @@ button#airCon {
     border-radius: 30px;
     background-image:url(icon\ back.jpg);
     background-position:top center;
+    float: left;
+    margin-top: 10%;
 }
 
 button#cctv {
     border-radius: 30px;
     background-image:url(icon\ back.jpg);
     background-position:top center;
+    float: right;
+    margin-top: 10%;
 }
 
 button#curtain {
     border-radius: 30px;
     background-image:url(icon\ back.jpg);
     background-position:top center;
+    float: left;
+    margin-top: 30%;
 }
 
 button#lights {
     border-radius: 30px;
     background-image:url(icon\ back.jpg);
     background-position:top center;
+    float: right;
+    margin-top: 30%;
+}
+#apibox {
+    border: 1px solid black;
+    height: 300px;
+    width: 500px;
+    margin: 0 auto;
+    grid-template-rows: 20%;
+    text-align:center;
+    background: url(../css/weather.gif);
+}
+h1 {
+    font-size: 5.5rem;
+}
+span {
+    font-size: 3rem;
+}
+.degrees {
+    display:grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    margin-left: 2rem; 
+}
+#icon {
+    width:80px;
+    filter: grayscale(100%);
 }
