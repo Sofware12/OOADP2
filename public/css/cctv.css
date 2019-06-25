@@ -1,0 +1,155 @@
+/*Reset padding and margin to 0*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/*Sets background image*/
+body {
+    background-image: url('spaceback.jpg'); 
+}
+
+/*CSS for header texts*/
+a#CCTVControls {
+    font-size: 60px;
+    margin: 0px 0px 20px 330px;
+    border: 4px solid rgba(243, 51, 251, 0.85);
+    border-radius: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgba(243, 51, 251, 0.85);
+    color: black;
+}
+
+p#Videos, p#SecurityCameras, p#DeleteVideos, p#ViewVideos {
+    text-align: center;
+    font-size: 35px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: red;
+}
+
+/*CSS for sub texts*/
+a#ViewVideos {
+    font-size: 30px;
+    color: cornflowerblue;
+    float: left;
+}
+
+a#DeleteVideos{
+    font-size: 30px;
+    color: cornflowerblue;
+    float: right;
+}
+
+/*CSS for ON/OFF switch*/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ff0000;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #00ff00;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  /*CSS for Security Camera text*/
+  div#SecurityCameras {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: #2196F3;
+      font-size: 20px;
+  }
+
+/*CSS for Delete button*/
+
+a.deleteButton {
+	background-color: red;
+	-moz-border-radius:24px;
+	-webkit-border-radius:24px;
+	border-radius:24px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:15px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 2px 0px firebrick;
+}
+a.deleteButton:hover {
+	background-color: crimson;
+}
+a.deleteButton:active {
+	position:relative;
+	top:1px;
+}
+
+/*CSS for View button*/
+a.viewButton {
+	background-color: rgb(0, 255, 0);
+	-moz-border-radius:24px;
+	-webkit-border-radius:24px;
+	border-radius:24px;
+	display:inline-block;
+	cursor:pointer;
+	color:black;
+	font-family:Verdana;
+	font-size:15px;
+	padding:16px 31px;
+	text-decoration:none;
+}
+a.viewButton:hover {
+	background-color: rgb(0, 220, 0);
+}
+a.viewButton:active {
+	position:relative;
+	top:1px;
+}

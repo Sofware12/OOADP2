@@ -44,9 +44,21 @@ router.get('/curtainTimed', (req, res) => {
 	res.render('curtain/cTimed') // renders views/cTimed.handlebars
 });
 
+
+//Ryan's
+
+router.get('/viewVideos', (req, res) => {
+	res.render('cctv/viewVideos')
+});
+
+router.get('/deleteVideos', (req, res) => {
+	res.render('cctv/deleteVideos')
+});
 router.get('/cctv', (req, res) => {
 	res.render('cctv/cctv') //renders views/cctv.handlebars
-})
+});
+
+
 
 router.get('/aircon', (req,res) =>{
 	res.render('airCon/aircon') //renders views/aircon.handlebars

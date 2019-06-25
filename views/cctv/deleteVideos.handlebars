@@ -1,0 +1,49 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/cctv.css">
+<script>
+function Delete1() {
+    confirm("Are you sure you want to delete?")
+    document.getElementById("SecurityCamera1").innerHTML="";
+}
+
+function Delete2() {
+    confirm("Are you sure you want to delete?")
+    document.getElementById("SecurityCamera2").innerHTML="";
+}
+
+function Delete3() {
+    confirm("Are you sure you want to delete?")
+    document.getElementById("SecurityCamera3").innerHTML="";
+}
+</script>
+</head>
+<body>
+<a id="CCTVControls" href="/cctv">
+    CCTV Controls
+</a>
+<p id="SecurityCameras">
+    Delete Videos
+</p>
+<div id="SecurityCameras">
+    <div id="SecurityCamera1">
+        SecCamera#1-20190214.mp4
+        <a href="#" class="deleteButton" onclick="Delete1()">
+            Delete
+        </a>
+    </div>
+    <div id="SecurityCamera2">
+        SecCamera#2-20190313.mp4
+        <a href="#" class="deleteButton" onclick="Delete2()">
+            Delete
+        </a>
+    </div>
+    <div id="SecurityCamera3">
+        SecCamera#3-20190803.mp4
+        <a href="#" class="deleteButton" onclick="Delete3()">
+            Delete
+        </a>
+    </div>
+</div>
+</body>
+</html>
