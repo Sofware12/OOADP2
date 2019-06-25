@@ -1,20 +1,27 @@
-const express = require('./node_modules/express');
-const router = express.Router();
-const Light1=require('../models/LightsDate')
+const db = require('../config/DBConfig');
+const express = require('express');
+const router =express();
+const lights_ids=require('../models/LightsDate');
+
+/* Creates a user(s) table in MySQL Database.
+Note that Sequelize automatically pleuralizes the entity name as the table name
+*/
 
 
-router.get('/'), (res, req) => {
-    res.render('/Lights');
-}
+router.get('/addtime',(req,res)=>{
+	const data={
+		Light_number:200
+	}
+ 
+	let { Light_number } = data;
 
-router.post('/Lights'), (res, req) =>{
-    const On = Date();
-    const Off = Date();
-    Light1.create({
-        On,
-        Off
-    })
-    console.log(Date)
-    res.redirect("/home")
 
-}
+    //insert into table
+	lights_ids.create({
+		Light_number
+	})
+      .then(Light_number => res.redirect('/lights'))
+      .catch(err => console.log(err));
+
+});
+module.exports = router;

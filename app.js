@@ -24,6 +24,7 @@ const passport = require('passport');
 */
 const mainRoute = require('./routes/main');
 const userRoute = require('./routes/user');
+const lightroute = require('./Routes/LightsDate1');
 
 smartlivingDB.setUpDB(false);
 /*
@@ -91,10 +92,10 @@ app.use(function (req, res, next) {
 	next();
 });
 // Place to define global variables - not used in practical 1
-app.use(function (req, res, next) {
+/* app.use(function (req, res, next) {
 	next();
 });
-
+*/
 // Use Routes
 /*
 * Defines that any root URL with '/' that Node JS receives request from, for eg. http://localhost:5000/, will be handled by
@@ -104,7 +105,7 @@ app.use('/', mainRoute); // mainRoute is declared to point to routes/main.js
 // This route maps the root URL to any path defined in main.js
 app.use('/user', userRoute); // mainRoute is declared to point to routes/main.js
 //
-
+app.use('/Light2',lightroute);
 
 
 
