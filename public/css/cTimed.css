@@ -12,13 +12,9 @@ body {
 .container {
     display: flex;
 }
-div {
-    flex-direction: column;
-    justify-content: center;
-}
- 
+
 .left-side {
-    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(255, 255, 225, 0.10)), url(../css/clock.gif);
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(255, 255, 225, 0.10));
     background-size: cover;
     background-position: center;
     flex: 1;
@@ -27,17 +23,6 @@ div {
   text-transform: uppercase;
   filter: grayscale(80%);
   height: 500px;
-}
-
-.clock {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    color: #17D4FE;
-    font-size: 60px;
-    font-family: Orbitron;
-    letter-spacing: 7px;
 }
  
 .right-side {
@@ -62,9 +47,64 @@ div {
     text-align: center;
     color: white;
 }
-.button {
-
+#myBox {
+    width: 100%;
+    border: solid 20px #0099cc;
+    height: 420px;
+    padding-top: 65px;
+    margin-top: 90px;	
+    background-color: #000;
+    text-align: center;
+    font-family: monospace, sans-serif;
+	font-size: 20px;
+    max-width: 30em;
+	margin: 0 auto;
+	color: #fff;
 }
-.button .active {
-    filter: sepia(100%);
+#time {
+    font-size: 65px;
+    margin-top: -65px;
+    color:  #33adff;
+}
+h3 {
+    color: #99cc00;
+    margin-top: -20px;
+    margin-bottom: 10px;
+}
+#mySelect {
+    margin-top: 10px;
+    margin-bottom: 35px;
+    width: 125px;
+    font-size: 20px;
+    padding: 2px;
+    border-radius: 3px;
+    font-weight: bold;
+    color: #cc0052;
+}
+#mySetButton, #myClearButton {
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: #d3d5cc;
+}
+#mySetButton:hover {
+    background-color: #b4b4b2;
+}
+#myClearButton:hover {
+    background-color: #b4b4b2;
+}
+#alarmHrs, #alarmMins, #alarmSecs {
+    width: 55px;
+    padding-left: 4px;
+    font-size: 15px;
+    margin-top: -10px;
+}
+
+@media only screen and (max-width: 600px) {
+    button {
+    margin-left: 2px;
+        margin-right: 4px;
+    }
+    #time {
+        font-size: 45px;
+    }
 }
