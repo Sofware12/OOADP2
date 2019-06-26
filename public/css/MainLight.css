@@ -227,7 +227,7 @@ body {
     position:absolute;
     top:400px;
     left:55px;
-    transform:rotate(90deg);
+    transform:rotate(270deg);
     border-radius:100px;
 
 
@@ -247,7 +247,7 @@ body {
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
     background:url("../images/lightbulb.png");
-    transform:rotate(270deg);
+    transform:rotate(90deg);
 
  }
 
@@ -257,6 +257,8 @@ body {
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
     background:url("../images/lightbulb.png");
+    transform:rotate(90deg);
+
 
 }
 
@@ -286,7 +288,7 @@ body {
     position:absolute;
     top:400px;
     left:423px;
-    transform:rotate(90deg);
+    transform:rotate(270deg);
     border-radius:100px;
 
 }
@@ -305,7 +307,7 @@ body {
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
     background:url("../images/lightbulb.png");
-    transform:rotate(270deg);
+    transform:rotate(90deg);
  }
 
 .slider1::-moz-range-thumb {
@@ -314,6 +316,8 @@ body {
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
     background:url("../images/lightbulb.png");
+    transform:rotate(90deg);
+
 }
 
 
@@ -345,7 +349,7 @@ body {
     position:absolute;
     top:400px;
     left: 793px;
-    transform:rotate(90deg);
+    transform:rotate(270deg);
     border-radius:100px;
 }
 
@@ -363,7 +367,7 @@ body {
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
     background:url("../images/lightbulb.png");
-    transform:rotate(270deg);
+    transform:rotate(90deg);
  }
 
 .slide2::-moz-range-thumb {
@@ -372,6 +376,8 @@ body {
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
     background:url("../images/lightbulb.png");
+    transform:rotate(90deg);
+
 }
 
 
@@ -403,7 +409,7 @@ body {
     position:absolute;
     top:400px;
     right: 63px;
-    transform:rotate(90deg);
+    transform:rotate(270deg);
     border-radius:100px;
 
 }
@@ -422,7 +428,7 @@ body {
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
     background:url("../images/lightbulb.png");
-    transform:rotate(270deg);
+    transform:rotate(90deg);
  }
 
 .slide3::-moz-range-thumb {
@@ -431,6 +437,8 @@ body {
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
     background:url("../images/lightbulb.png");
+    transform:rotate(90deg);
+
 }
 
 
@@ -462,12 +470,15 @@ body {
 
     z-index:3;
     color:white;
+    position: absolute;
+    bottom:30px;
+    left:90px;
 
 }
 
 #d{ position:absolute;
     bottom:120px;
-    left:180px;
+    left:160px;
     color:white;
 
 }
@@ -476,6 +487,10 @@ body {
 
     z-index:3;
     color:white;
+    position: absolute;
+    left:198px;
+    bottom:158px;
+
 
 }
 
