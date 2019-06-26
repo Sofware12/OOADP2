@@ -13,6 +13,22 @@ const Light = db.define('Lights_ID', {
     
 });
 
+const LightLog = db.define('Light_log', {
+
+    Light_number: {
+        type: Sequelize.INTEGER
+    },
+
+    Light_state: {
+        type: Sequelize.INTEGER
+    },
+
+    Time: {
+        type: Sequelize.DATE
+    },
+    
+});
 
 
 module.exports = Light;
+module.exports = LightLog;
