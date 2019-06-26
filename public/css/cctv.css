@@ -27,6 +27,14 @@ p#Videos, p#SecurityCameras, p#DeleteVideos, p#ViewVideos {
     color: red;
 }
 
+/*CSS for Add Camera button*/
+p#AddCamera {
+    text-align: center;
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: slateblue;
+}
+
 /*CSS for sub texts*/
 a#ViewVideos {
     font-size: 30px;
