@@ -5,73 +5,82 @@
     var addNewOption = document.getElementById('addNew')
     function addition() {
         var person = prompt("Please enter the curtain you want", "Curtain 3");
-        if (person){
-            var label = text;
-            var value = text;
-            var newOption = document.createElement('option');
-            newOption.innerHTML = label
-            newOption.innerHTML = value;
+        if (person) {
+            document.getElementById('InvisibleHiddenForm').submit();
+            //var label = text;
+            //var value = text;
+            //var newOption = document.createElement('option');
+            //newOption.innerHTML = label
+            //newOption.innerHTML = value;
 
-            dropdown.insertBefore(newOption, addNewOption);
-            dropdown.value = value;
+            //dropdown.insertBefore(newOption, addNewOption);
+            //dropdown.value = value;
         }
         else {
-            select.value = 'default';
-        }
-    }
+            //select.value = 'default';
 
-    function showPicture(img) {
-        document.getElementById("SelectedPosition").src = img;
-    }
+        }
 
-    var cl = 0;
-    function left1() {
-        if (cl < 10) {
-            cl ++;
+        function showPicture(img) {
+            document.getElementById("SelectedPosition").src = img;
         }
-        document.getElementById('c1').innerHTML = cl;
-    }
-    function right1() {
-        if (cl > 0) {
-            cl --;
-        }
-        document.getElementById('c1').innerHTML = cl;
-    }
 
-    var cll = 0;
-    function left2() {
-        if (cll < 10) {
-            cll ++;
+        var cl = 0;
+        function left1() {
+            if (cl < 10) {
+                cl++;
+            }
+            document.getElementById('c1').innerHTML = cl;
         }
-        document.getElementById('c2').innerHTML = cll;
-    }
-    function right2() {
-        if (cll > 0) {
-            cll --;
+        function right1() {
+            if (cl > 0) {
+                cl--;
+            }
+            document.getElementById('c1').innerHTML = cl;
         }
-        document.getElementById('c2').innerHTML = cll;
+
+        var cll = 0;
+        function left2() {
+            if (cll < 10) {
+                cll++;
+            }
+            document.getElementById('c2').innerHTML = cll;
+        }
+        function right2() {
+            if (cll > 0) {
+                cll--;
+            }
+            document.getElementById('c2').innerHTML = cll;
+        }
     }
 </script>
+
 <body>
+    <form id="InvisibleHiddenForm" method="POST" action="/curtainn">
+    </form>
     <div id="label">
         <label id="User"></label>
     </div>
     <div id="dropdown" class="dropdown">
         <button class="dropbtn">Curtain</button>
-        <div class="content">
-            <option value="default">Curtain 1</option>
-            <option>Curtain 2</option>
+        <div class="content" onclick="addNewOption">
+            {{NoCurtain}}
             <option id="addNew" value="addNew" onclick="addition()">+Add Curtain</option>
         </div>
     </div>
     <div id="cControl">
-        <label id="c1"></label>
-        <img id="left1" src="../css/arrow.gif" onclick="left1()">
-        <img id="right1" src="../css/arrow.gif" onclick="right1()">
+        <div id="left">
+            <label id="c1">0</label>
+            <img id="left1" src="../css/arrow.gif" onclick="left1()">
+            <img id="right1" src="../css/arrow.gif" onclick="right1()">
+        </div>
+        <label id="name">HI</label>
         <img id="SelectedPosition" src="../css/half.png" />
-        <label id="c2"></label>
-        <img id="left2" src="../css/arrow.gif" onclick="left2()">
-        <img id="right2" src="../css/arrow.gif" onclick="right2()">
+        <div id="right">
+            <label id="c2">0</label>
+            <img id="left2" src="../css/arrow.gif" onclick="left2()">
+            <img id="right2" src="../css/arrow.gif" onclick="right2()">
+        </div>
         <div id="box">
             <ul>
                 <button id="button"><img src="../css/open.png" onclick="showPicture(this.src)" /> </button>

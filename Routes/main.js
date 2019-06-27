@@ -1,6 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const light_logs=require('../models/LightsDate')
+const passport = require("passport")
+const cControl = require("../models/cControl")
+
+router.use(passport.initialize());
+router.use(passport.session());
 
 router.get('/', (req, res) => {
 	const title = 'Video Jotter';
@@ -29,7 +34,7 @@ router.get('/lights', (req, res) => {
 
 //Xavier's
 
-router.get('/home', (req,res) => {
+router.get('/home', (req, res) => {
 	res.render('home/home') //renders views/home.handlebars
 });
 
@@ -41,10 +46,44 @@ router.get('/curtainControl', (req, res) => {
 	res.render('curtain/cControl') // renders views/cControl.handlebars
 });
 
+router.post('/curtainn', (req, res) => {
+	const userId = req.user.id
+	cControl.findAll({
+		where: {
+			userId: userId
+		}
+	}).then(Success => {
+		if (Success.length == 0) {
+			cControl.create({
+				Curtains: 1,
+				userId: userId
+			})
+		}
+		else {
+			cControl.findAll({
+				attributes: [
+					'Curtains',
+				],
+				where: {
+					userId: userId
+				}
+			}).then(Success => {
+				console.log("CHICKEN: ",Success[0].Curtains)
+				cControl.update(
+					{Curtains: Success[0].Curtains+1},
+					{where: {userId: userId}
+				})
+				console.log(Success[0].Curtains+1)
+				res.render('curtain/cControl', {NoCurtain: Success[0].Curtains+1})
+			})
+		}
+	});
+	res.redirect('/curtainControl')
+});
+
 router.get('/curtainTimed', (req, res) => {
 	res.render('curtain/cTimed') // renders views/cTimed.handlebars
 });
-
 
 //Ryan's
 
@@ -55,13 +94,13 @@ router.get('/viewVideos', (req, res) => {
 router.get('/deleteVideos', (req, res) => {
 	res.render('cctv/deleteVideos')
 });
+
 router.get('/cctv', (req, res) => {
 	res.render('cctv/cctv') //renders views/cctv.handlebars
 });
 
 
-
-router.get('/aircon', (req,res) =>{
+router.get('/aircon', (req, res) => {
 	res.render('airCon/aircon') //renders views/aircon.handlebars
 })
 
