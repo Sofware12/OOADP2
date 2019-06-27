@@ -3,9 +3,20 @@
 <link rel="stylesheet" type="text/css" href="css/cctv.css">
 <script>
     function addCamera() {
-        var camera = document.createElement("p");
+        var camera = document.createElement("div");
         camera.innerHTML = "test";
-        document.body.appendChild(camera);
+        var div = document.getElementById('div#SecurityCameras')
+        document.div.appendChild(camera);
+    }
+
+    function renameCamera(camera) {
+        var newName = prompt("Please enter camera name.");
+        if (newName == null) {
+            alert("Action cancelled.");   
+        } 
+        else{
+            camera.innerHTML = newName;
+        }
     }
 </script>
 </head>
@@ -19,37 +30,37 @@
 <p id="AddCamera" onclick="addCamera()">
     Add camera
 </p>
-<div id=SecurityCameras>
+<div id="SecurityCameras">
     <div>
-        Security Camera #1
+        <span onclick="renameCamera(this)">Security Camera #1</span>
         <label class="switch">
             <input type="checkbox">
             <span class="slider round"></span>
         </label>
     </div>
     <div>
-        Security Camera #2
+        <span onclick="renameCamera(this)">Security Camera #2</span>
         <label class="switch">
             <input type="checkbox">
             <span class="slider round"></span>
         </label>
     </div>
     <div>
-        Security Camera #3
+        <span onclick="renameCamera(this)">Security Camera #3</span>
         <label class="switch">
             <input type="checkbox">
             <span class="slider round"></span>
         </label>
     </div>
     <div>
-        Security Camera #4
+        <span onclick="renameCamera(this)">Security Camera #4</span>
         <label class="switch">
             <input type="checkbox">
             <span class="slider round"></span>
         </label>
     </div>
     <div>
-        Security Camera #5
+        <span onclick="renameCamera(this)">Security Camera #5</span>
         <label class="switch">
             <input type="checkbox">
             <span class="slider round"></span>

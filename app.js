@@ -110,7 +110,7 @@ app.use('/user', userRoute); // mainRoute is declared to point to routes/main.js
 //
 app.use('/Light2',lightroute);
 
-app.use('cctv', cctvroute);
+app.use('/cctv', cctvroute);
 
 /*
 * Creates a unknown port 5000 for express server since we don't want our app to clash with well known
