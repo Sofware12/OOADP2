@@ -99,9 +99,14 @@ router.get('/cctv', (req, res) => {
 	res.render('cctv/cctv') //renders views/cctv.handlebars
 });
 
+//Nicholas'
 
-router.get('/aircon', (req, res) => {
-	res.render('airCon/aircon') //renders views/aircon.handlebars
+router.get('/aircon', (req, res) =>{
+	res.render('aircon/aircon') //renders views/aircon.handlebars
+})
+
+router.get('/achistory', (req, res) =>{
+	res.render('aircon/achistory') //renders views/achistory.handlebars
 })
 
 module.exports = router;

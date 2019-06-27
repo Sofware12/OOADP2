@@ -28,6 +28,7 @@ const lightroute = require('./Routes/LightsDate1');
 const controlRoute = require('./Routes/Ccontrol');
 const timeRoute = require('./Routes/Ctimed');
 const cctvroute = require('./routes/cctv');
+const airconRoute = require('./Routes/aircon2')
 
 smartlivingDB.setUpDB(false);
 /*
@@ -111,6 +112,8 @@ app.use('/user', userRoute); // mainRoute is declared to point to routes/main.js
 app.use('/Light2',lightroute);
 
 app.use('/cctv', cctvroute);
+
+app.use('/aircon', airconRoute);
 
 /*
 * Creates a unknown port 5000 for express server since we don't want our app to clash with well known
