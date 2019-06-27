@@ -32,6 +32,6 @@ function sendTime() {
         processData: false,
         'success': (data) => {
 
-            }
+        }
     })
 }
