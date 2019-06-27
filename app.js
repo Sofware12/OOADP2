@@ -25,6 +25,8 @@ const passport = require('passport');
 const mainRoute = require('./routes/main');
 const userRoute = require('./routes/user');
 const lightroute = require('./Routes/LightsDate1');
+const controlRoute = require('./Routes/Ccontrol');
+const timeRoute = require('./Routes/Ctimed');
 
 smartlivingDB.setUpDB(false);
 /*
@@ -107,29 +109,17 @@ app.use('/user', userRoute); // mainRoute is declared to point to routes/main.js
 //
 app.use('/Light2',lightroute);
 
-
-
-
-
-
 /*
 * Creates a unknown port 5000 for express server since we don't want our app to clash with well known
 * ports such as 80 or 8080.
 * */
 const port = 5000;
 
-
-
-
-
-
 // Starts the server and listen to port 5000
 app.listen(port, () => {
 	console.log(`Server started on port ${port}`);
 });
 
-// Connects to MySQL database
-// vidjotDB.setUpDB(false); // To set up database with new tables set (true)
 // Passport Config
 const authenticate = require('./config/passport');
 authenticate.localStrategy(passport);
