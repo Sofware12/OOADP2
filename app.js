@@ -25,6 +25,7 @@ const passport = require('passport');
 const mainRoute = require('./routes/main');
 const userRoute = require('./routes/user');
 const lightroute = require('./Routes/LightsDate1');
+const cctvroute = require('./routes/cctv');
 
 smartlivingDB.setUpDB(false);
 /*
@@ -107,6 +108,7 @@ app.use('/user', userRoute); // mainRoute is declared to point to routes/main.js
 //
 app.use('/Light2',lightroute);
 
+app.use('cctv', cctvroute);
 
 
 
