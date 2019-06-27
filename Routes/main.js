@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const light_logs=require('../models/LightsDate')
 
 router.get('/', (req, res) => {
 	const title = 'Video Jotter';
