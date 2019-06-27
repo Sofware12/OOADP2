@@ -8,7 +8,7 @@ const cctvCameras = db.define('camera', {
     footage: {
         type: Sequelize.STRING
     },
-    duration: {
+    time: {
         type: Sequelize.STRING
     },
 });
