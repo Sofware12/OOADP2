@@ -1,14 +1,14 @@
-const Sequelize = require('Sequelize');
+const Sequelize = require('sequelize');
 const db = require('../config/DBConfig');
 
-const cctvCameras = db.define('cameras', {
+const cctvCameras = db.define('camera', {
     name: {
         type: Sequelize.STRING
     },
     footage: {
         type: Sequelize.STRING
     },
-    time: {
+    duration: {
         type: Sequelize.STRING
     },
 });
