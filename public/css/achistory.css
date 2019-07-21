@@ -1,0 +1,79 @@
+body {
+    background-image: url(spaceback.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1em 2em;
+    font-size: 18px;
+}
+
+h1 {
+    color: cyan;
+}
+
+#current {
+    position: absolute;
+    top: 130px;
+    left: 200px;
+    font-size: 70px;
+}
+
+#history {
+    position: absolute;
+    top: 130px;
+    left: 600px;
+    font-size: 70px;
+    color: orange;
+}
+
+#aircon {
+    position: absolute;
+    top: 150px;
+    left: 1100px;
+    background-color: red;
+    height: 8%;
+    width: 15%;
+    font-size: 30px;
+}
+
+#aclist {
+    position: absolute;
+    top: 320px;
+    left: 250px;
+}
+
+#date {
+    position: absolute;
+    color: orange;
+    top: 300px;
+    left: 550px;
+    background-color: white;
+    padding-right: 780px;
+}
+
+#time {
+    position: absolute;
+    color: orange;
+    top: 300px;
+    left: 700px;
+}
+
+#duration {
+    position: absolute;
+    color: orange;
+    top: 300px;
+    left: 850px;
+}
+
+#temp {
+    position: absolute;
+    color: orange;
+    top: 300px;
+    left: 1080px;
+}
+
+#fanspd {
+    position: absolute;
+    color: orange;
+    top: 300px;
+    left: 1250px;
+}

@@ -1,13 +1,6 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="css/cctv.css">
-<script>
-    function addCamera() {
-        var camera = document.createElement("p");
-        camera.innerHTML = "test";
-        document.body.appendChild(camera);
-    }
-</script>
 </head>
 <body>
 <a id="CCTVControls" href="/cctv">
@@ -19,39 +12,39 @@
 <p id="AddCamera" onclick="addCamera()">
     Add camera
 </p>
-<div id=SecurityCameras>
+<div id="SecurityCameras">
     <div>
-        Security Camera #1
+        <span onclick="renameCamera(this)">Security Camera #1</span>
         <label class="switch">
-            <input type="checkbox">
+            <input type="checkbox" onclick="sendTime()">
             <span class="slider round"></span>
         </label>
     </div>
     <div>
-        Security Camera #2
+        <span onclick="renameCamera(this)">Security Camera #2</span>
         <label class="switch">
-            <input type="checkbox">
+            <input type="checkbox" onclick="sendTime()">
             <span class="slider round"></span>
         </label>
     </div>
     <div>
-        Security Camera #3
+        <span onclick="renameCamera(this)">Security Camera #3</span>
         <label class="switch">
-            <input type="checkbox">
+            <input type="checkbox" onclick="sendTime()">
             <span class="slider round"></span>
         </label>
     </div>
     <div>
-        Security Camera #4
+        <span onclick="renameCamera(this)">Security Camera #4</span>
         <label class="switch">
-            <input type="checkbox">
+            <input type="checkbox" onclick="sendTime()">
             <span class="slider round"></span>
         </label>
     </div>
     <div>
-        Security Camera #5
+        <span onclick="renameCamera(this)">Security Camera #5</span>
         <label class="switch">
-            <input type="checkbox">
+            <input type="checkbox" onclick="sendTime()">
             <span class="slider round"></span>
         </label>
     </div>
@@ -61,9 +54,6 @@
 <p id="Videos">
     Video Options
 </p>
-<br>
-<br>
-<br>
 <br>
 <a id="ViewVideos" href="/viewVideos">
     View available videos

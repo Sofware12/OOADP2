@@ -13,8 +13,8 @@ const Light = db.define('Lights_ID', {
     
 });
 
-const LightLog = db.define('Light_log', {
-
+const lightLog = db.define('light_log', {
+ 
     Light_number: {
         type: Sequelize.INTEGER
     },
@@ -31,4 +31,4 @@ const LightLog = db.define('Light_log', {
 
 
 module.exports = Light;
-module.exports = LightLog;
+module.exports = lightLog;

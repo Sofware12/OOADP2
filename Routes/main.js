@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const light_logs=require('../models/LightsDate')
 const passport = require("passport")
 const cControl = require("../models/cControl")
 
@@ -102,9 +103,14 @@ router.get('/cctv', (req, res) => {
 	res.render('cctv/cctv') //renders views/cctv.handlebars
 });
 
+//Nicholas'
 
-router.get('/aircon', (req, res) => {
-	res.render('airCon/aircon') //renders views/aircon.handlebars
+router.get('/aircon', (req, res) =>{
+	res.render('aircon/aircon') //renders views/aircon.handlebars
+})
+
+router.get('/achistory', (req, res) =>{
+	res.render('aircon/achistory') //renders views/achistory.handlebars
 })
 
 module.exports = router;

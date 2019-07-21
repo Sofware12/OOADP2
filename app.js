@@ -32,6 +32,7 @@ const ambienceroute = require('./Routes/Cambience');
 const leftsetroute = require('./Routes/Leftset')
 const rightsetroute = require('./Routes/Rightset')
 const position = require('./routes/Position')
+const airconRoute = require('./Routes/aircon2')
 
 smartlivingDB.setUpDB(false);
 /*
@@ -118,7 +119,7 @@ app.use('/cctv', cctvroute);
 
 app.use('/Ctimed',timeRoute);
 
-
+app.use('/aircon', airconRoute);
 
 /*
 * Creates a unknown port 5000 for express server since we don't want our app to clash with well known

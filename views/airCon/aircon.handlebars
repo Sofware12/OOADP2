@@ -1,0 +1,129 @@
+<link rel="stylesheet" href="css/aircon.css">
+
+<script>
+    function incrementValue() {
+        var value = parseInt(document.getElementById('number').value, 10);
+        value = isNaN(value) ? 0 : value;
+        value++;
+        document.getElementById('number').value = value;
+        if (value > 30) value = 30;
+        document.getElementById('number').value = value;
+        if (value < 16) value = 16;
+        document.getElementById('number').value = value;
+    }
+
+    function decrementValue() {
+        var value = parseInt(document.getElementById('number').value, 10);
+        value = isNaN(value) ? 0 : value;
+        value--;
+        if (value < 16) value = 16;
+        document.getElementById('number').value = value;
+        if (value > 30) value = 30;
+        document.getElementById('number').value = value;
+    }
+
+    function changename() {
+        var newname = prompt("What do you want to change the name to?", "Aircon #1");
+        current.innerText = newname;
+    }
+
+    
+</script>
+
+<div id="aclist">
+    <div id="ac1">
+        <h1>
+            Aircon #1
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </h1>
+    </div>
+    <div id="ac2">
+        <h1>
+            Aircon #2
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </h1>
+    </div>
+    <div id="ac3">
+        <h1>
+            Aircon #3
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </h1>
+    </div>
+    <div id="ac4">
+        <h1>
+            Aircon #4
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </h1>
+    </div>
+    <div id="ac5">
+        <h1>
+            Aircon #5
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </h1>
+    </div>
+</div>
+
+<div id="all">
+    <h1>
+        All Control
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+    </h1>
+</div>
+
+<div id="add">
+    <input type="text" name="addaircon">
+    <input type="submit" value="Add">
+</div>
+
+<div>
+    <form action="/achistory">
+        <input type="submit" id="history" value="History Logs" />
+    </form>
+</div>
+
+<div>
+    <h1 id="current">Aircon #1</h1>
+</div>
+
+<div>
+    <input type="image" onclick="changename()" id="rename" src="../css/quill.png" width="70" height="90">
+</div>
+
+<div>
+    <button id="delete">Delete</button>
+</div>
+
+<div id="temperature">
+    <h1 id="temp">Temperature °C</h1>
+    <input type="image" onclick="incrementValue()" id="up" src="../css/up_button.png" width="70" height="90">
+    <input type="text" id="number" value="25">
+    <input type="image" onclick="decrementValue()" id="down" src="../css/down_button.png" width="70" height="90">
+</div>
+
+<div id="fanspeed">
+    <h1 id="fan">Fan Speed</h1>
+    <input type="radio" name="speed" id="highradio" value="high"> <br>
+    <input type="radio" name="speed" id="mediumradio" value="medium" checked="true"> <br>
+    <input type="radio" name="speed" id="lowradio" value="low"> <br>
+    <h1 id="high">High</h1>
+    <h1 id="med">Medium</h1>
+    <h1 id="low">Low</h1>
+</div>

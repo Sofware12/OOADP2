@@ -31,4 +31,14 @@ function sliderupdate(sliderId, outputId) {
     }
 }
 var myRangeSlider = document.getElementById("myRange");
-myRangeSlider.oninput = sliderupdate(1, "demo");
+myRangeSlider.onmouseup = sliderupdate(1, "demo");
+myRangeSlider.ontouchend = sliderupdate(1, "demo");
+
+var myRangeSlider = document.getElementById("myRange1");
+myRangeSlider.oninput = sliderupdate(2, "demo1");
+
+var myRangeSlider = document.getElementById("myRange2");
+myRangeSlider.oninput = sliderupdate(3, "demo2");
+
+var myRangeSlider = document.getElementById("myRange3");
+myRangeSlider.oninput = sliderupdate(4, "demo3");
