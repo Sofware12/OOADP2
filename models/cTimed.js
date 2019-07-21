@@ -12,24 +12,12 @@ const CurtainTimed = db.define('time', {
     },
     second: {
         type: Sequelize.INTEGER
+    },
+    sound: {
+        type: Sequelize.STRING
     }
 });
 
-const Cambience = db.define('ambience', {
-    day: {
-        type: Sequelize.STRING
-    },
-    night: {
-        type: Sequelize.STRING
-    },
-    party: {
-        type: Sequelize.STRING
-    },
-    movie: {
-        type: Sequelize.STRING
-    }
-});
 
 
 module.exports = CurtainTimed
-module.exports = Cambience

@@ -45,43 +45,47 @@ router.get('/curtainControl', (req, res) => {
 	res.render('curtain/cControl') // renders views/cControl.handlebars
 });
 
-router.post('/curtainn', (req, res) => {
-	const userId = req.user.id
-	cControl.findAll({
-		where: {
-			userId: userId
-		}
-	}).then(Success => {
-		if (Success.length == 0) {
-			cControl.create({
-				Curtains: 1,
-				userId: userId
-			})
-		}
-		else {
-			cControl.findAll({
-				attributes: [
-					'Curtains',
-				],
-				where: {
-					userId: userId
-				}
-			}).then(Success => {
-				console.log("CHICKEN: ",Success[0].Curtains)
-				cControl.update(
-					{Curtains: Success[0].Curtains+1},
-					{where: {userId: userId}
-				})
-				console.log(Success[0].Curtains+1)
-				res.render('curtain/cControl', {NoCurtain: Success[0].Curtains+1})
-			})
-		}
-	});
-	res.redirect('/curtainControl')
-});
+// router.post('/curtainn', (req, res) => {
+// 	const userId = req.user.id
+// 	cControl.findAll({
+// 		where: {
+// 			userId: userId
+// 		}
+// 	}).then(Success => {
+// 		if (Success.length == 0) {
+// 			cControl.create({
+// 				Curtains: 1,
+// 				userId: userId
+// 			})
+// 		}
+// 		else {
+// 			cControl.findAll({
+// 				attributes: [
+// 					'Curtains',
+// 				],
+// 				where: {
+// 					userId: userId
+// 				}
+// 			}).then(Success => {
+// 				console.log("CHICKEN: ",Success[0].Curtains)
+// 				cControl.update(
+// 					{Curtains: Success[0].Curtains+1},
+// 					{where: {userId: userId}
+// 				})
+// 				console.log(Success[0].Curtains+1)
+// 				res.render('curtain/cControl', {NoCurtain: Success[0].Curtains+1})
+// 			})
+// 		}
+// 	});
+// 	res.redirect('/curtainControl')
+// });
 
 router.get('/curtainTimed', (req, res) => {
 	res.render('curtain/cTimed') // renders views/cTimed.handlebars
+});
+
+router.get('curtainLog', (req, res) => {
+	res.render('curtain/Logs')// renders views/Logs.handlebars
 });
 
 //Ryan's

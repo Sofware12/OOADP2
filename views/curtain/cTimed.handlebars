@@ -147,37 +147,47 @@
 </script>
 
 <body>
-	<div class="container">
-		<div class="left-side">
-			<h1>Timer</h1>
-			<div id="myBox">
-				<div id="time"></div>
-				<br>
-				<h3>Set Alarm Time:</h3>
-				<select id="alarmHrs"></select>
-				<select id="alarmMins"></select>
-				<select id="alarmSecs"></select>
-				<br><br>
-				<div id="myDiv">
-					<label>Choose Alarm Sound:</label>
+	<form method="POST">
+		<div class="container">
+			<div class="left-side">
+				<h1>Timer</h1>
+				<div id="myBox">
+					<div id="time"></div>
 					<br>
-					<select id="mySelect"></select>
+					<h3>Set Alarm Time:</h3>
+					<select id="alarmHrs" name="hour"></select>
+					<select id="alarmMins" name="minute"></select>
+					<select id="alarmSecs" name="second"></select>
+					<br><br>
+					<div id="myDiv">
+						<label>Choose Alarm Sound:</label>
+						<br>
+						<select id="mySelect" name ="sound"></select>
+					</div>
+					<button id="mySetButton" type="submit" formaction="/cTimed">Alarm Set</button>
+					<button id="myClearButton">Alarm Clear</button>
+					<br><br>
 				</div>
-				<button id="mySetButton">Alarm Set</button>
-				<button id="myClearButton">Alarm Clear</button>
-				<br><br>
 			</div>
-		</div>
-		<div class="right-side">
-			<article>
-				<h1>Ambience</h1>
-				<div class="ambience-box">
-					<button class="button"><img src="../css/morning.png" height="100" width="100"></button>
-					<button class="button"><img src="../css/night.jpg" height="100" width="100"></button>
-					<button class="button"><img src="../css/movie.png" height="100" width="100"></button>
-					<button class="button"><img src="../css/party.png" height="100" width="100"></button>
-				</div>
-			</article>
-		</div>
+	</form>
+	<div class="right-side">
+		<article>
+			<h1>Ambience</h1>
+			<div class="ambience-box">
+				<input type="radio" name="ambience" value="day" checked>
+				<img src="../css/morning.png" height="100" width="100">
+				</input>
+				<input type="radio" name="ambience" value="night">
+				<img src="../css/night.jpg" height="100" width="100">
+				</input>
+				<input type="radio" name="ambience" value="movie">
+				<img src="../css/movie.png" height="100" width="100">
+				</input>
+				<input type="radio" name="ambience" value="party">
+				<img src="../css/party.png" height="100" width="100">
+				</input>
+				<button id="setting" type="submit" formaction="/cAmbience">Set Ambience</button>
+			</div>
+		</article>
 	</div>
 </body>
