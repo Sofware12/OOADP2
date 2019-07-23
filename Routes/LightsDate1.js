@@ -56,7 +56,15 @@ router.post('/slidereading', (req,res) => {
 
 
 
-
+//RAW QUERIES>>>>>>>
+// router.get('/Logs',(req,res)=> {
+// 	let sql = 'SELECT * FROM light_logs';
+//     let query = db.query(sql,(err,result)=>{
+//         if (err) throw err;
+//         console.log('data inserted into table');
+// 		res.send('completed task')
+// 	}) ;
+// });
 
 
 module.exports = router;
