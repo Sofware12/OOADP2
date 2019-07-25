@@ -145,6 +145,7 @@ h1 {
     left: 90px;
     top: 190px;
     font-size: 80px;
+    border-radius: 10px;
 }
 
 #down {

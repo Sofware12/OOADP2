@@ -1,34 +1,5 @@
 <link rel="stylesheet" href="css/aircon.css">
 
-<script>
-    function incrementValue() {
-        var value = parseInt(document.getElementById('number').value, 10);
-        value = isNaN(value) ? 0 : value;
-        value++;
-        document.getElementById('number').value = value;
-        if (value > 30) value = 30;
-        document.getElementById('number').value = value;
-        if (value < 16) value = 16;
-        document.getElementById('number').value = value;
-    }
-
-    function decrementValue() {
-        var value = parseInt(document.getElementById('number').value, 10);
-        value = isNaN(value) ? 0 : value;
-        value--;
-        if (value < 16) value = 16;
-        document.getElementById('number').value = value;
-        if (value > 30) value = 30;
-        document.getElementById('number').value = value;
-    }
-
-    function changename() {
-        var newname = prompt("What do you want to change the name to?", "Aircon #1");
-        current.innerText = newname;
-    }
-
-    
-</script>
 
 <div id="aclist">
     <div id="ac1">
@@ -127,3 +98,37 @@
     <h1 id="med">Medium</h1>
     <h1 id="low">Low</h1>
 </div>
+
+<script>
+    function incrementValue() {
+        var value = parseInt(document.getElementById('number').value, 10);
+        value = isNaN(value) ? 0 : value;
+        value++;
+        document.getElementById('number').value = value;
+        if (value > 30) value = 30;
+        document.getElementById('number').value = value;
+        if (value < 16) value = 16;
+        document.getElementById('number').value = value;
+
+        const req = new XMLHttpRequest();
+        req.open("POST", "/aircon/updateValue");
+        req.setRequestHeader("Content-Type", "application/json");
+        req.send(JSON.stringify({"value": value}));
+    }
+
+    function decrementValue() {
+        var value = parseInt(document.getElementById('number').value, 10);
+        value = isNaN(value) ? 0 : value;
+        value--;
+        if (value < 16) value = 16;
+        document.getElementById('number').value = value;
+        if (value > 30) value = 30;
+        document.getElementById('number').value = value;
+    }
+
+    function changename() {
+        var newname = prompt("What do you want to change the name to?", "Aircon #1");
+        current.innerText = newname;
+    }
+    
+</script>

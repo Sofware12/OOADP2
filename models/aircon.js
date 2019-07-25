@@ -18,4 +18,5 @@ const aircon = db.define('aircon', {
         type: Sequelize.STRING
     },
 });
+
 module.exports = aircon;
