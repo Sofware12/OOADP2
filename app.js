@@ -24,15 +24,13 @@ const passport = require('passport');
 */
 const mainRoute = require('./routes/main');
 const userRoute = require('./routes/user');
+const profileroute = require('./Routes/profile');
 const lightroute = require('./Routes/LightsDate1');
 const controlRoute = require('./Routes/Ccontrol');
 const timeRoute = require('./Routes/Ctimed');
 const cctvroute = require('./routes/cctv');
 const ambienceroute = require('./Routes/Cambience');
-const leftsetroute = require('./Routes/Leftset')
-const rightsetroute = require('./Routes/Rightset')
-const position = require('./routes/Position')
-const airconRoute = require('./Routes/aircon2')
+const airconRoute = require('./Routes/aircon2');
 
 smartlivingDB.setUpDB(false);
 /*
@@ -113,6 +111,8 @@ app.use('/', mainRoute); // mainRoute is declared to point to routes/main.js
 // This route maps the root URL to any path defined in main.js
 app.use('/user', userRoute); // mainRoute is declared to point to routes/main.js
 //
+app.use('/profile', profileroute);
+
 app.use('/Light2',lightroute);
 
 app.use('/cctv', cctvroute);

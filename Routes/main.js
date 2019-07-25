@@ -38,6 +38,10 @@ router.get('/home', (req, res) => {
 	res.render('home/home') //renders views/home.handlebars
 });
 
+router.get('/profile', (req, res) => {
+	res.render('profile/profile') //renders views/profile.handlebars
+})
+
 router.get('/Curtain', (req, res) => {
 	res.render('curtain/curtain') // renders views/curtain.handlebars
 });
