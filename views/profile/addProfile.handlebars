@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="card card-body mx-auto">
+        <h3>Add Profile</h3>
+        <form action="/profile/addProfile" method="POST" id="addProfile">
+            <div class="row mb-2">
+                <div class="col-lg-4 mb-5">
+                    <input type="file" id="profileUpload" name="profileUpload" accept="image/png, image/jpeg, image/jpg, image/gif">
+                    <img id="profilePic" src="./css/no-image.jpg" alt="" class="border img-thumbnail img-fluid" style="height:95%;width:100%">
+                    <input id="Profile" type="hidden" name="Profile">
+                    <div class="font-weight-bold text-danger small" id="posterErr" style"display:none"></div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="form-group">
+                        <label class="font-italic" for="Uname">Username</label>
+                        <input id="uname" type="text" class="form-control" name="uname" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-italic" for="Fname">First Name</label>
+                        <input id="fname" type="text" class="form-control" name="fname" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-italic" for="Lname">Last Name</label>
+                        <input id="lname" type="text" class="form-control" name="lname" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row mb-2 mt-4">
+                    <div class="col-12 col-sm-5 col-md-5 col-lg-6 mb-4">
+                        <label class="font-italic">Age</label>
+                        <br>
+                        <input id="age" type="number" width="200" name="Age">
+                    </div>
+                    <div class="col-12 col-sm-7 col-md-7 col-lg-6">
+                        <label class="font-italic">Gender</label>
+                        <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="Male" value="Male" name="Gender">
+                            <label class="form-check-label" for="Male">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="Female" value="Female" name="Gender">
+                            <label class="form-check label" for="Female">Female</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="font-italic" for="email">Email</label>
+                        <input id="email" type="text" class="form-control" name="email">
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="font-italic" for="phoneNum">Phone Number</label>
+                        <input id="phoneNum" type="tel" class="form-control" name="phoneNum" pattern="[0-9]{8}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row mb-2">
+                        <div class="form-group">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                            <label class="font-italic" for="bio">Biography</label>
+                            <textarea class="form-control" id="bio" name="bio" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <button type="submit" disabled style="display: none" aria-hidden="true"></button>
+            <input id="butAddProfile" class="btn btn-outline-danger" type="submit" value="Save Profile">
+        </form>
+    </div>
+</div>

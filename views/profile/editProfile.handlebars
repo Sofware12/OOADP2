@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="card card-body">
+        <h3>Edit Profile</h3>
+        <form action="/profile/saveEditedProfile/{{profile.id}}?_method=PUT" method="post">
+        <input type="hidden" name="_method" value="PUT">
+        <form action="/profile/addProfile" method="POST" id="addProfile">
+            <div class="row mb-2">
+                <div class="col-lg-4 mb-5">
+                    <input type="image" id="profileUpload" name="profileUpload">
+                    <img id="profilePic" src="./css/profilepic.jpg" alt="" class="border img-thumbnail img-fluid" style="height:95%;width:100%">
+                </div>
+                <div class="col-lg-8">
+                    <div class="form-group">
+                        <label class="font-italic" for="Uname">Username</label>
+                        <input id="uname" type="text" class="form-control" name="uname" value="{{profile.uname}}"required>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-italic" for="Fname">First Name</label>
+                        <input id="fname" type="text" class="form-control" name="fname" value="{{profile.fname}}" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-italic" for="Lname">Last Name</label>
+                        <input id="lname" type="text" class="form-control" name="lname" value="{{profile.lname}}"required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row mb-2 mt-4">
+                    <div class="col-12 col-sm-5 col-md-5 col-lg-6 mb-4">
+                        <label class="font-italic">Age</label>
+                        <input id="age" type="number" width="200" name="Age" value="{{profile.Age}}">
+                    </div>
+                    <div class="col-12 col-sm-7 col-md-7 col-lg-6">
+                        <label class="font-italic">Gender</label>
+                        <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="Male" value="Male" name="Gender"
+                                {{radioCheck profile.Gender 'Male'}}>
+                            <label class="form-check-label" for="Male">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="Female" value="Female" name="Gender"
+                                {{radioCheck profile.Gender 'Female'}}>
+                            <label class="form-check label" for="Female">Female</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="font-italic" for="email">Email</label>
+                        <input id="email" type="text" class="form-control" name="email" value="{{profile.email}}">
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <label class="font-italic" for="phoneNum">Phone Number</label>
+                        <input id="phoneNum" type="number" class="form-control" name="phoneNum" value="{{profile.phoneNum}}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row mb-2">
+                    <div class="form-group">
+                        <label class="font-italic" for="bio">Biography</label>
+                        <textarea class="form-control" id="bio" name="bio" rows="3">{{profile.bio}}</textarea>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <button type="submit" disabled style="display: none" aria-hidden="true"></button>
+            <input id="butEditProfile" class="btn btn-outline-danger" type="submit" value="Save Profile">
+        </form>
+    </div>
+</div> 
