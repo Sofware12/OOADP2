@@ -75,6 +75,36 @@ h1 {
     top: 150px;
 }
 
+#switchposition {
+    position: absolute;
+    left: 190px;
+    top: 10px; 
+}
+
+#switchposition2 {
+    position: absolute;
+    left: 190px;
+    top: 65px; 
+}
+
+#switchposition3 {
+    position: absolute;
+    left: 190px;
+    top: 120px; 
+}
+
+#switchposition4 {
+    position: absolute;
+    left: 190px;
+    top: 175px; 
+}
+
+#switchposition5 {
+    position: absolute;
+    left: 190px;
+    top: 230px; 
+}
+
 #all {
     position: absolute;
     top: 440px;
@@ -152,6 +182,13 @@ h1 {
     position: absolute;
     left: 105px;
     top: 320px;
+}
+
+#submitchange {
+    position: absolute;
+    left: 50px;
+    top: 430px;
+    background-color: pink;
 }
 
 #highradio {

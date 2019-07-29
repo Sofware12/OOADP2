@@ -3,15 +3,22 @@ const express = require('express');
 const router = express();
 const aircon = require('../models/aircon');
 
-/* Creates a user(s) table in MySQL Database.
-Note that Sequelize automatically pleuralizes the entity name as the table name
-*/
+router.post('/aircon/aircon', (req, res) => {
+    let date = req.body.date;
+    let time = req.body.time;
+    let duration = req.body.duration;
+    let temp = req.body.temp;
+    let fanspd = req.body.fanspd;
 
-//router.post('/updateValue', (req, res) =>{
-//    console.log(req.body);
-    
-//    aircon.Create...aircon...// res.render('aircon/aircon') //renders views/aircon.handlebars
-//    res.sendStatus(200);
-//});
+    aircon.create({
+        date,
+        time,
+        duration,
+        temp,
+        fanspd
+    }).then((aircon2) => {
+        res.redirect('/aircon/achistory');
+    }).catch(err => console.log(err))
+})
 
 module.exports = router;

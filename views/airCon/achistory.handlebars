@@ -16,27 +16,27 @@
 
 <div id="aclist">
     <div id="ac1">
-        <h1>
+        <h1 onclick="changeaircon()">
             Aircon #1
         </h1>
     </div>
     <div id="ac2">
-        <h1>
+        <h1 onclick="changeaircon2()">
             Aircon #2
         </h1>
     </div>
     <div id="ac3">
-        <h1>
+        <h1 onclick="changeaircon3()">
             Aircon #3
         </h1>
     </div>
     <div id="ac4">
-        <h1>
+        <h1 onclick="changeaircon4()">
             Aircon #4
         </h1>
     </div>
     <div id="ac5">
-        <h1>
+        <h1 onclick="changeaircon5()"> 
             Aircon #5
         </h1>
     </div>
@@ -45,6 +45,7 @@
 <div id="info">
     <div>
         <h1 id="date">Date</h1>
+        <h2>{{date}}</h2>
     </div>
 
     <div>
@@ -63,3 +64,37 @@
         <h1 id="fanspd">Fan Spd</h1>
     </div>
 </div>
+
+<script>
+
+    function changeaircon() {
+        var currentac = document.getElementById("current");
+        var newac = document.getElementById("ac1");
+        currentac.innerHTML = newac.innerHTML;
+    }
+
+    function changeaircon2() {
+        var currentac = document.getElementById("current");
+        var newac = document.getElementById("ac2");
+        currentac.innerHTML = newac.innerHTML;
+    }
+    
+    function changeaircon3() {
+        var currentac = document.getElementById("current");
+        var newac = document.getElementById("ac3");
+        currentac.innerHTML = newac.innerHTML;
+    }
+    
+    function changeaircon4() {
+        var currentac = document.getElementById("current");
+        var newac = document.getElementById("ac4");
+        currentac.innerHTML = newac.innerHTML;
+    }
+    
+    function changeaircon5() {
+        var currentac = document.getElementById("current");
+        var newac = document.getElementById("ac5");
+        currentac.innerHTML = newac.innerHTML;
+    }
+
+</script>
