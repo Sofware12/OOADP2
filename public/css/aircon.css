@@ -66,53 +66,33 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-h1 {
+h1, h2, h3, h4 {
     color: cyan;
+}
+
+h3, h4 {
+    font-size: 45px;
 }
 
 #aclist {
     position: absolute;
-    top: 150px;
-}
-
-#switchposition {
-    position: absolute;
-    left: 190px;
-    top: 10px; 
-}
-
-#switchposition2 {
-    position: absolute;
-    left: 190px;
-    top: 65px; 
-}
-
-#switchposition3 {
-    position: absolute;
-    left: 190px;
-    top: 120px; 
-}
-
-#switchposition4 {
-    position: absolute;
-    left: 190px;
-    top: 175px; 
-}
-
-#switchposition5 {
-    position: absolute;
-    left: 190px;
-    top: 230px; 
+    top: 250px;
 }
 
 #all {
     position: absolute;
-    top: 440px;
+    top: 130px;
+}
+
+#switch2 {
+    position: absolute;
+    left: 210px;
+    top: 10px;
 }
 
 #add {
     position: absolute;
-    top: 520px;
+    top: 200px;
 }
 
 #history {
@@ -137,7 +117,7 @@ h1 {
     height: 8%;
     width: 5%;
     top: 120px;
-    left: 1000px;
+    left: 1050px;
 }
 
 #delete {
@@ -145,8 +125,14 @@ h1 {
     width: 8%;
     position: absolute;
     background-color: red;
-    left: 1150px;
+    left: 1200px;
     top: 120px;
+}
+
+#switch1 {
+    position: absolute;
+    top: 135px;
+    right: 550px;
 }
 
 #temperature {
@@ -182,13 +168,6 @@ h1 {
     position: absolute;
     left: 105px;
     top: 320px;
-}
-
-#submitchange {
-    position: absolute;
-    left: 50px;
-    top: 430px;
-    background-color: pink;
 }
 
 #highradio {
@@ -231,4 +210,13 @@ h1 {
     position: absolute;
     top: 310px;
     right: 18px;
+}
+
+#submitbutton {
+    position: absolute;
+    background-color: orange;
+    top: 650px;
+    right: 300px;
+    height: 7%;
+    width: 8%;
 }

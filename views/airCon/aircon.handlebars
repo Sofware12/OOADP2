@@ -1,87 +1,50 @@
-<link rel="stylesheet" href="css/aircon.css">
+<link rel="stylesheet" href="/css/aircon.css">
 
-
-<div id="aclist">
-    <div id="ac1">
-        <h1 id="aircon1" onclick="changeaircon()">
-            Aircon #1
-        </h1>
-        <div id="switchposition">
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-            </label>
-        </div>
-    </div>
-    <div id="ac2">
-        <h1 id="aircon2" onclick="changeaircon2()">
-            Aircon #2
-        </h1>
-        <div id="switchposition2">
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-            </label>
-        </div>
-    </div>
-    <div id="ac3">
-        <h1 id="aircon3" onclick="changeaircon3()">
-            Aircon #3
-        </h1>
-        <div id="switchposition3">
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-            </label>
-        </div>
-    </div>
-    <div id="ac4">
-        <h1 id="aircon4" onclick="changeaircon4()">
-            Aircon #4
-        </h1>
-        <div id="switchposition4">
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-            </label>
-        </div>
-    </div>
-    <div id="ac5">
-        <h1 id="aircon5" onclick="changeaircon5()">
-            Aircon #5
-        </h1>
-        <div id="switchposition5">
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-            </label>
-        </div>
-    </div>
+<div id="add">
+    <input type="text" name="addaircon" value="Aircon #"></input>
+    <button onclick="addmoreaircon()">Add</button>
 </div>
 
 <div id="all">
     <h1>
         All Control
-        <label class="switch">
+        <label class="switch" id="switch2">
             <input type="checkbox">
             <span class="slider round"></span>
         </label>
     </h1>
 </div>
 
-<div id="add">
-    <input type="text" name="addaircon">
-    <input type="submit" value="Add">
+<div id="aclist">
+    <h1 id="aircon1" onclick="changeaircon()">
+        Aircon #1
+    </h1>
+    <h1 id="aircon2" onclick="changeaircon2()">
+        Aircon #2
+    </h1>
+    <h1 id="aircon3" onclick="changeaircon3()">
+        Aircon #3
+    </h1>
+    <h1 id="aircon4" onclick="changeaircon4()">
+        Aircon #4
+    </h1>
+    <h1 id="aircon5" onclick="changeaircon5()">
+        Aircon #5
+    </h1>
 </div>
 
 <div>
-    <form action="/achistory">
+    <form action="/aircon/achistory" method="GET">
         <input type="submit" id="history" value="History Logs" />
     </form>
 </div>
 
 <div>
-    <h1 id="current">Aircon #1</h1>
+    <h2 id="current">Aircon #1</h2>
+    <label class="switch" id="switch1">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
 </div>
 
 <div>
@@ -92,27 +55,38 @@
     <button id="delete" onclick="deleteAC()">Delete</button>
 </div>
 
-<form action="/aircon/aircon" method="post" id="aircon">
+<div>
     <div id="temperature">
-        <h1 id="temp">Temperature °C</h1>
+        <h3 id="temp">Temperature °C</h3>
         <input type="image" onclick="incrementValue()" id="up" src="../css/up_button.png" width="70" height="90">
         <input type="text" id="number" value="25">
         <input type="image" onclick="decrementValue()" id="down" src="../css/down_button.png" width="70" height="90">
-        <button type="submit" id="submitchange">Change Temperature</button>
     </div>
-
-    <div id="fanspeed">
-        <h1 id="fan">Fan Speed</h1>
+    <div id="fanspeed" value="fanspd">
+        <h4 id="fan">Fan Speed</h4>
         <input type="radio" name="speed" id="highradio" value="high"> <br>
         <input type="radio" name="speed" id="mediumradio" value="medium" checked="true"> <br>
         <input type="radio" name="speed" id="lowradio" value="low"> <br>
-        <h1 id="high">High</h1>
-        <h1 id="med">Medium</h1>
-        <h1 id="low">Low</h1>
+        <h4 id="high">High</h4>
+        <h4 id="med">Medium</h4>
+        <h4 id="low">Low</h4>
     </div>
+</div>
+
+<form action="/aircon/aircon" method="post" id="aircon">
+    <button type="submit" id="submitbutton">Submit</button>
 </form>
 
 <script>
+    function addmoreaircon() {
+        var header = document.createElement("header");
+        var h1 = document.createElement("h1");
+        newtext = document.getElementById("addaircon").value;
+        h1.textContent = newtext;
+        header.appendChild(h1);
+        document.body.appendChild(header);
+    }
+
     function incrementValue() {
         var value = parseInt(document.getElementById('number').value, 10);
         value = isNaN(value) ? 0 : value;
@@ -172,6 +146,5 @@
         var currentac = document.getElementById("current");
         var newac = document.getElementById("aircon5");
         currentac.innerHTML = newac.innerHTML;
-    }
-    
+    }    
 </script>

@@ -16,8 +16,6 @@ const smartlivingDB = require('./config/DBConnection');
 const db = require('./config/db'); // db.js config file
 const passport = require('passport'); 
 
-
-
 /*
 * Loads routes file main.js in routes directory. The main.js determines which function
 * will be called based on the HTTP request and URL.
