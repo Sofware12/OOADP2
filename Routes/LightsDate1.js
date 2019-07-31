@@ -98,18 +98,18 @@ router.post('/Lights', (req, res) => {
 
 });
 
-router.get('/Lights', (req, res) => {
+// router.get('/Lights', (req, res) => {
 
-	lights_ids.findAll({ // SELECT * FROM Light_ids
+// 	lights_ids.findAll({ // SELECT * FROM Light_ids
 
-	}
-	).then((results) => {
-		console.log('Logs:', results) // each result in results has id and light_number
-		res.render('Lights/Lightss', {
-			LightID: results
-		})
-	}).catch(err => console.log(err))
-	});
+// 	}
+// 	).then((results) => {
+// 		console.log('Logs:', results) // each result in results has id and light_number
+// 		res.render('Lights/Lightss', {
+// 			LightID: results
+// 		})
+// 	}).catch(err => console.log(err))
+// 	});
 
 
 

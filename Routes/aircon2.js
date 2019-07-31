@@ -5,10 +5,12 @@ const router = express.Router();
 
 router.post('/aircon', (req, res) => {
     let airconname = req.body.airconname;
-    let date = req.body.date;
-    let time = req.body.time;
-    let temp = req.body.temp;
-    let fanspd = req.body.fanspd;
+    let today = new Date();
+    let date = today.getFullYear() + '-' + (today.getMonth()+1) + '-' + today.getDate();
+    let todaytime = new Date();
+    let time = todaytime.getHours() + ':' + todaytime.getMinutes();
+    let temp = req.body.tempValue;
+    let fanspd = req.body.speed;
 
     aircon.create({
         airconname: airconname,

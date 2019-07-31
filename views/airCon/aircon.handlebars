@@ -40,14 +40,6 @@
 </div>
 
 <div>
-    <h2 id="current">Aircon #1</h2>
-    <label class="switch" id="switch1">
-        <input type="checkbox">
-        <span class="slider round"></span>
-    </label>
-</div>
-
-<div>
     <input type="image" onclick="changename()" id="rename" src="../css/quill.png" width="70" height="90">
 </div>
 
@@ -55,25 +47,36 @@
     <button id="delete" onclick="deleteAC()">Delete</button>
 </div>
 
-<div>
-    <div id="temperature">
-        <h3 id="temp">Temperature °C</h3>
-        <input type="image" onclick="incrementValue()" id="up" src="../css/up_button.png" width="70" height="90">
-        <input type="text" id="number" value="25">
-        <input type="image" onclick="decrementValue()" id="down" src="../css/down_button.png" width="70" height="90">
-    </div>
-    <div id="fanspeed" value="fanspd">
-        <h4 id="fan">Fan Speed</h4>
-        <input type="radio" name="speed" id="highradio" value="high"> <br>
-        <input type="radio" name="speed" id="mediumradio" value="medium" checked="true"> <br>
-        <input type="radio" name="speed" id="lowradio" value="low"> <br>
-        <h4 id="high">High</h4>
-        <h4 id="med">Medium</h4>
-        <h4 id="low">Low</h4>
-    </div>
+<div id="temperature">
+    <h3 id="temp">Temperature °C</h3>
+    <input type="image" onclick="incrementValue()" id="up" src="../css/up_button.png" width="70" height="90">
+    <input type="image" onclick="decrementValue()" id="down" src="../css/down_button.png" width="70" height="90">
 </div>
 
+{{!-- Form to post values into database --}}
 <form action="/aircon/aircon" method="post" id="aircon">
+    <div>
+        <h2 id="current" name="airconname">Aircon #1</h2>
+        <label class="switch" id="switch1">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    <div>
+        <input type="text" id="number" name="tempValue" value="25">
+
+        <div id="fanspeed">
+            <h4 id="fan">Fan Speed</h4>
+            <input type="radio" name="speed" id="highradio" value="High"> <br>
+            <input type="radio" name="speed" id="mediumradio" value="Medium" checked="true"> <br>
+            <input type="radio" name="speed" id="lowradio" value="Low"> <br>
+            <h4 id="high">High</h4>
+            <h4 id="med">Medium</h4>
+            <h4 id="low">Low</h4>
+        </div>
+    </div>
+
     <button type="submit" id="submitbutton">Submit</button>
 </form>
 
