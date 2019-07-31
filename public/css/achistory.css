@@ -6,21 +6,10 @@ body {
     font-size: 18px;
 }
 
-h1 {
-    color: cyan;
-    font-size: 50px;
-}
-
-#current {
-    position: absolute;
-    top: 130px;
-    left: 200px;
-}
-
 #history {
     position: absolute;
     top: 130px;
-    left: 600px;
+    left: 550px;
     font-size: 70px;
     color: orange;
 }
@@ -35,17 +24,11 @@ h1 {
     font-size: 30px;
 }
 
-#aclist {
-    position: absolute;
-    top: 320px;
-    left: 200px;
-}
-
 #tableinfo {
     color: black;
     font-size: 40px;
     position: absolute;
-    left: 500px;
+    left: 250px;
     top: 250px;
     background-color: white;
     opacity: 0.7;

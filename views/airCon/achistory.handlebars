@@ -1,10 +1,6 @@
 <link rel="stylesheet" href="/css/achistory.css">
 
 <div>
-    <h1 id="current">Aircon #1</h1>
-</div>
-
-<div>
     <h1 id="history">History Logs</h1>
 </div>
 
@@ -14,37 +10,10 @@
     </form>
 </div>
 
-<div id="aclist">
-    <div id="ac1">
-        <h1 onclick="changeaircon()">
-            Aircon #1
-        </h1>
-    </div>
-    <div id="ac2">
-        <h1 onclick="changeaircon2()">
-            Aircon #2
-        </h1>
-    </div>
-    <div id="ac3">
-        <h1 onclick="changeaircon3()">
-            Aircon #3
-        </h1>
-    </div>
-    <div id="ac4">
-        <h1 onclick="changeaircon4()">
-            Aircon #4
-        </h1>
-    </div>
-    <div id="ac5">
-        <h1 onclick="changeaircon5()"> 
-            Aircon #5
-        </h1>
-    </div>
-</div>
-
 <div>
     <table id="tableinfo">
         <tr>
+            <th>Aircon</th>
             <th>Date</th>
             <th>Time</th>
             <th>Temp</th>
@@ -53,6 +22,7 @@
         {{#if DataInfo}}
         {{#each DataInfo}}
         <tr>
+            <td>{{airconname}}</td>
             <td>{{date}}</td>
             <td>{{time}}</td>
             <td>{{temp}}°C</td>

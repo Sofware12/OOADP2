@@ -4,12 +4,14 @@ const aircon = require('../models/aircon');
 const router = express.Router();
 
 router.post('/aircon', (req, res) => {
+    let airconname = req.body.airconname;
     let date = req.body.date;
     let time = req.body.time;
     let temp = req.body.temp;
     let fanspd = req.body.fanspd;
 
     aircon.create({
+        airconname: airconname,
         date: date,
         time: time,
         temp: temp,
