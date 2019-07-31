@@ -1,92 +1,62 @@
 <link rel="stylesheet" href="css/cControl.css">
 <script>
-    var label = document.getElementById('label')
-    var dropdown = document.getElementById('dropdown')
-    var addNewOption = document.getElementById('addNew')
-    function addition() {
-        var person = prompt("Please enter the curtain you want", "Curtain 3");
-        if (person) {
-            document.getElementById('InvisibleHiddenForm').submit();
-            //var label = text;
-            //var value = text;
-            //var newOption = document.createElement('option');
-            //newOption.innerHTML = label
-            //newOption.innerHTML = value;
-
-            //dropdown.insertBefore(newOption, addNewOption);
-            //dropdown.value = value;
-        }
-        else {
-            //select.value = 'default';
-
-        }
-
-        function showPicture(img) {
-            document.getElementById("SelectedPosition").src = img;
-        }
-
-        var cl = 0;
-        function left1() {
-            if (cl < 10) {
-                cl++;
-            }
-            document.getElementById('c1').innerHTML = cl;
-        }
-        function right1() {
-            if (cl > 0) {
-                cl--;
-            }
-            document.getElementById('c1').innerHTML = cl;
-        }
-
-        var cll = 0;
-        function left2() {
-            if (cll < 10) {
-                cll++;
-            }
-            document.getElementById('c2').innerHTML = cll;
-        }
-        function right2() {
-            if (cll > 0) {
-                cll--;
-            }
-            document.getElementById('c2').innerHTML = cll;
-        }
+    function showPicture(img) {
+        document.getElementById("SelectedPosition").src = img;
     }
 </script>
 
 <body>
-    <form id="InvisibleHiddenForm" method="POST" action="/curtainn">
+    <form method="POST" action="/cControl">
+        <div class="container">
+            <div id="left" class="col">
+                <label>LEFT</label>
+                <div class="form-check">
+                    <select class="form-check-input" id="Left" name="Left">
+                        <option value="1" id="1">1</option>
+                        <option value="2" id="2">2</option>
+                        <option value="3" id="3">3</option>
+                        <option value="4" id="4">4</option>
+                        <option value="5" id="5">5</option>
+                        <option value="6" id="6">6</option>
+                        <option value="7" id="7">7</option>
+                        <option value="8" id="8">8</option>
+                        <option value="9" id="9">9</option>
+                        <option value="10" id="10">10</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-8">
+                <img id="SelectedPosition" src="../css/half.png" />
+            </div>
+            <div id="right" class="col">
+                <label>RIGHT</label>
+                <div class="form-check">
+                    <select class="form-check-input" id="Right" name="Right">
+                        <option value="1" id="1">1</option>
+                        <option value="2" id="2">2</option>
+                        <option value="3" id="3">3</option>
+                        <option value="4" id="4">4</option>
+                        <option value="5" id="5">5</option>
+                        <option value="6" id="6">6</option>
+                        <option value="7" id="7">7</option>
+                        <option value="8" id="8">8</option>
+                        <option value="9" id="9">9</option>
+                        <option value="10" id="10">10</option>
+                    </select>
+                </div>
+            </div>
+            <div id="box">
+                <ul>
+                    <input type="button" id="button"><img src="../css/open.png" onclick="showPicture(this.src)" name="preset" value="open" />
+                    </input>
+                    <input type="button" id="button"><img src="../css/half.png" onclick="showPicture(this.src)" name="preset" value="half"/>
+                    </input>
+                    <input type="button" id="button"><img src="../css/covered.png" onclick="showPicture(this.src)" name="preset" value="covered"/>
+                    </input>
+                </ul>
+            </div>
+            <button type="submit" disabled style="display: none" aria-hidden="true"></button>
+            <input id="butAddProfile" class="btn btn-outline-danger" type="submit" value="Submit">
+        </div>
     </form>
-    <div id="label">
-        <label id="User"></label>
-    </div>
-    <div id="dropdown" class="dropdown">
-        <button class="dropbtn">Curtain</button>
-        <div class="content" onclick="addNewOption">
-            {{NoCurtain}}
-            <option id="addNew" value="addNew" onclick="addition()">+Add Curtain</option>
-        </div>
-    </div>
-    <div id="cControl">
-        <div id="left">
-            <label id="c1">0</label>
-            <img id="left1" src="../css/arrow.gif" onclick="left1()">
-            <img id="right1" src="../css/arrow.gif" onclick="right1()">
-        </div>
-        <label id="name">HI</label>
-        <img id="SelectedPosition" src="../css/half.png" />
-        <div id="right">
-            <label id="c2">0</label>
-            <img id="left2" src="../css/arrow.gif" onclick="left2()">
-            <img id="right2" src="../css/arrow.gif" onclick="right2()">
-        </div>
-        <div id="box">
-            <ul>
-                <button id="button"><img src="../css/open.png" onclick="showPicture(this.src)" /> </button>
-                <button id="button"><img src="../css/half.png" onclick="showPicture(this.src)" /> </button>
-                <button id="button"><img src="../css/covered.png" onclick="showPicture(this.src)" /> </button>
-            </ul>
-        </div>
-    </div>
 </body>

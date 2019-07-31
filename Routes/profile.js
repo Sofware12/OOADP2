@@ -3,6 +3,32 @@ const router = express.Router();
 const Profile = require('../models/Profile')
 const db = require('../config/DBConfig')
 const alertMessage = require('../helpers/messanger')
+const ensureAuthenticated = require('../helpers/auth')
+const fileUpload = require('express-fileupload')
+
+router.use(fileUpload());
+router.use(express.static('public/images/Profile'));
+
+router.post('/profile', (req, res) => {
+    if(Object.keys(req.files).length == 0) {
+        res.render('profile/profile', {
+            err: 'File not uploaded'
+        });
+    }
+
+    let file = req.files.file;
+
+    sampleFile.mv('public/images/user.png',(err) => {
+        if (err) {
+            res.render('profile/profile', {
+                err: 'Error'
+            })
+        } else {
+            alertMessage(res, 'success', 'Picture Updated', 'fas fa-sign-in-alt', false);
+            res.redirect('profile');
+        }      
+    });
+});
 
 //Shows edit profile page
 router.get('/edit/:id', (req, res) => {
@@ -13,10 +39,12 @@ router.get('/edit/:id', (req, res) => {
     }).then((profile)=> {
         if(!profile) {
             alertMessage(res, 'info', 'No such profile exist', 'fas fa-exclamation-circle', true);
-            res.redirect('/profile/profile');
+            res.redirect('/profile/profile'); 
         } else {
             res.render('profile/editProfile', {
-                profile
+                "profile": profile,
+                "isMale" : profile.Gender === 'Male',
+                "isFemale": profile.Gender === 'Female'
             });
         }
     }).catch(err => console.log(err));
@@ -47,12 +75,13 @@ router.put('/saveEditedProfile/:id', (req, res) => {
 			id: req.params.id
 		}
 	}).then(() => {
+        alertMessage(res, 'success', 'Done edited', 'fas fa-sign-in-alt', false);
 		res.redirect('/profile/profile');
 	}).catch(err => console.log(err));
 });
 
 //Show add profile page
-router.get('/showAddProfile', (req, res) => {
+router.get('/showAddProfile', ensureAuthenticated, (req, res) => {
     res.render('profile/addProfile');
 });
 
@@ -82,7 +111,7 @@ router.post('/addProfile', (req, res) => {
 });
 
 //Show the profile to the logged in user
-router.get('/profile', (req, res) => {
+router.get('/profile', ensureAuthenticated, (req, res) => {
     Profile.findAll({
         order: [
             ['uname', 'ASC']
@@ -95,26 +124,22 @@ router.get('/profile', (req, res) => {
     }).catch(err => console.log(err));
 });
 
-router.get('/delete/:id', (req, res) => {
+router.get('/video/delete/:id', ensureAuthenticated, (req, res) => {
     let profileId = req.params.id;
     Profile.findOne({
         where: {
             id: profileId,
         },
-        attributes: ['id', 'userId']
+        attributes: ['id', 'id']
     }).then((profile) => {
-        if(profile != null) {
             Profile.destroy({
                 where: {
                     id: profileId
                 }
             }).then(() => {
                 alertMessage(res, 'info', 'Profile has been deleted', 'far fa-trash-alt', true);
-                res.redirect('profile/profile');
+                res.render('profile/profile');
             }).catch(err => console.log(err));
-        } else {
-            alertMessage(res, 'danger', 'There is no such video', 'fas fa-exclamation-circle', true);
-        }
     });
 });
 
