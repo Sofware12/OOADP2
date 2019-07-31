@@ -1,0 +1,79 @@
+<!--, col-  .col-sm-    .col-md-    .col-lg-    .col-xl- -->
+
+<div class="container">
+    {{#if profile}}
+    <div class="card card-body">
+        <h3 class="text-primary">Profile</h3>
+        {{#each profile}}
+        <div class="card border-primary mb-2 w-100 mx-auto">
+            <div class="card-header">
+                <h5 class="card-title">{{uname}}</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-4">
+                        <form ref='uploadForm' id='uploadForm' action='http://localhost:5000/upload' method='post'
+                            enctype="multipart/form-data">
+                            <input type="file" name="sampleFile" />
+                            <input type='submit' value='Upload!' />
+                        </form>
+                    </div>
+
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 col-lg-3">
+                                <p class="font-italic">First Name</p>
+                                <p class="text-info">{{fname}}</p>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-3">
+                                <p class="font-italic">Last Name</p>
+                                <P class="text-info">{{lname}}</P>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-3">
+                                <p class="font-italic">Age</p>
+                                <P class="text-info">{{Age}}</P>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-3">
+                                <p class="font-italic">Gender</p>
+                                <p class="text-info">{{Gender}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6 col-lg-8">
+                                <p class="font-italic">Email</p>
+                                <p class="text-info">{{email}}</p>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-lg-4">
+                                <p class="font-italic">Phone Number</p>
+                                <p class="text-info">{{phoneNum}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6 col-lg-12">
+                                <p class="font-italic">Biography</p>
+                                <p class="text-info">{{bio}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 col-lg-2">
+                        <p class="font-italic"></p>
+                        <a href="/profile/edit/{{id}}" class="card-link">
+                            <i class="fas fa-pencil-alt"></i>
+                            Edit
+                        </a>
+                        <a href="video/delete/{{id}}" class="card-link" data-toggle="confirmation"
+                            data-title="Are you sure you want to delete?">
+                            <i class="far fa-trash-alt"></i>
+                            Delete
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+{{else}}
+<h1>You have not created a profile.</h1>
+{{/if}}

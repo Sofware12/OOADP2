@@ -3,17 +3,27 @@ const express = require('express');
 const router = express();
 const CCTV = require('../models/cctv');
 
-router.post('/sendFootage', (req, res) => {
-    const date = {
-        time: today
-    }
-    let {time} = date;
+router.post('/cctv', (req, res) => {
+    let name = req.body.name1;
+    let state = req.body.state;
 
-    cameras.create([
-        time
-    ])
-    .then(name => res.redirect('/viewVideos'))
-    .catch(err => console.log(err));
+    cameras.create({
+        name,
+        state
+    }).then((cctv) => {
+        res.redirect('/cctv/cctv');
+    }).catch(err => console.log(err));
 })
+
+router.get('/cctv', (req, res) => {
+    cameras.findAll({
+        order: [
+			['title', 'ASC']
+		],
+		raw: true
+    }).then((cctv) => {
+        res.render('/cctv/cctv');
+    });
+});
 
 module.exports = router;

@@ -1,0 +1,24 @@
+<div class="container">
+    {{#if CControl}}
+    {{#each CControl}}
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Left</th>
+                <th scope="col">Right</th>
+                <th scope="col">Preset position</th>
+            </tr>
+        </thead>
+        <tbody>
+            <th scope="row">1</th>
+            <td>{{Left}}</td>
+            <td>{{Right}}</td>
+            <td>{{preset}}</td>
+        </tbody>
+    </table>
+    {{/each}}
+    {{else}}
+    <h1>There is no history of sets.</h1>
+    {{/if}}
+</div>
