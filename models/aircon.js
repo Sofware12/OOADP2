@@ -19,4 +19,4 @@ const aircon = db.define('aircon', {
     },
 });
 
-module.exports = aircon2;
+module.exports = aircon;
