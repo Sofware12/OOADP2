@@ -30,6 +30,7 @@ const controlRoute = require('./Routes/Ccontrol');
 const timeRoute = require('./Routes/Ctimed');
 const cctvroute = require('./routes/cctv');
 const ambienceroute = require('./Routes/Cambience');
+
 const airconRoute = require('./Routes/aircon2')
 
 smartlivingDB.setUpDB(false);
@@ -166,6 +167,7 @@ app.use('/Light2',lightroute);
 app.use('/cctv', cctvroute);
 
 app.use('/Ctimed',timeRoute);
+
 
 app.use('/aircon', airconRoute);
 
