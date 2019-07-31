@@ -20,7 +20,7 @@ a#CCTVControls {
     color: black;
 }
 
-p#Videos, p#SecurityCameras, p#DeleteVideos, p#ViewVideos {
+p#Videos, p#SecurityCameras, p#DeleteVideos, p#ViewVideos, p#UploadVideos {
     text-align: center;
     font-size: 35px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -39,13 +39,16 @@ p#AddCamera {
 a#ViewVideos {
     font-size: 30px;
     color: cornflowerblue;
-    float: left;
+}
+
+a#UploadVideos {
+    font-size: 30px;
+    color: cornflowerblue;
 }
 
 a#DeleteVideos{
     font-size: 30px;
     color: cornflowerblue;
-    float: right;
 }
 
 /*CSS for ON/OFF switch*/
@@ -160,4 +163,9 @@ a.viewButton:hover {
 a.viewButton:active {
 	position:relative;
 	top:1px;
+}
+
+label#cameraName {
+  font-size: 20px;
+  color: cyan;
 }

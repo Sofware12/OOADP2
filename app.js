@@ -15,6 +15,8 @@ const MySQLStore = require('express-mysql-session');
 const smartlivingDB = require('./config/DBConnection');
 const db = require('./config/db'); // db.js config file
 const passport = require('passport'); 
+const fileUpload = require('express-fileupload');
+const fs = require('fs');
 
 /*
 * Loads routes file main.js in routes directory. The main.js determines which function
@@ -37,6 +39,55 @@ smartlivingDB.setUpDB(false);
 */
 const app = express();
 
+app.use(fileUpload());
+
+app.post('/upload', function(req, res) {
+	if (Object.keys(req.files).length == 0) {
+	  return res.status(400).send('No files were uploaded.');
+	}
+  
+	// The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+	let videoFootage = req.files.videoFootage;
+  
+	// Use the mv() method to place the file somewhere on your server
+	videoFootage.mv('public/css/videoFootage.mp4', function(err) {
+	  if (err)
+		return res.status(500).send(err);
+  
+	  res.redirect('/cctv');
+	});
+});
+
+app.get('/video', function(req, res) {
+	const path = 'public/css/videoFootage.mp4'
+	const stat = fs.statSync(path)
+	const fileSize = stat.size
+	const range = req.headers.range
+	if (range) {
+	  const parts = range.replace(/bytes=/, "").split("-")
+	  const start = parseInt(parts[0], 10)
+	  const end = parts[1] 
+		? parseInt(parts[1], 10)
+		: fileSize-1
+	  const chunksize = (end-start)+1
+	  const file = fs.createReadStream(path, {start, end})
+	  const head = {
+		'Content-Range': `bytes ${start}-${end}/${fileSize}`,
+		'Accept-Ranges': 'bytes',
+		'Content-Length': chunksize,
+		'Content-Type': 'video/mp4',
+	  }
+	  res.writeHead(206, head);
+	  file.pipe(res);
+	} else {
+	  const head = {
+		'Content-Length': fileSize,
+		'Content-Type': 'video/mp4',
+	  }
+	  res.writeHead(200, head)
+	  fs.createReadStream(path).pipe(res)
+	}
+});
 // Handlebars Middleware
 /*
 * 1. Handlebars is a front-end web templating engine that helps to create dynamic web pages using variables

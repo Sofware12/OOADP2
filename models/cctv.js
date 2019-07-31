@@ -5,11 +5,9 @@ const cctvCameras = db.define('camera', {
     name: {
         type: Sequelize.STRING
     },
-    footage: {
-        type: Sequelize.STRING
-    },
-    time: {
+    state: {
         type: Sequelize.STRING
     },
 });
+
 module.exports = cctvCameras;

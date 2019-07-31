@@ -107,6 +107,14 @@ router.get('/cctv', (req, res) => {
 	res.render('cctv/cctv') //renders views/cctv.handlebars
 });
 
+router.get('/uploadFile', (req, res) => {
+	res.render('cctv/uploadFile')
+});
+
+router.get('/cctv1', (req, res) => {
+	res.render('cctv/cctv1')
+});
+
 //Nicholas'
 
 router.get('/aircon', (req, res) =>{
