@@ -22,45 +22,30 @@
   </div>
 </div>
 
-<form action="../Lights" method="post">
-<input type="submit" class="button1">ON</button>
+<form action = "/Light2/Lights" method="POST">
+
+<button  type="submit" id="newLight" >Add new light</button>
 </form>
 
 
-<button type="button" class="button2" onclick="Savetime()">OFF</button>
-
-<button type="button" class="button3">ON</button>
-<button type="button" class="button4">OFF</button>
-
-<button type="button" class="button5">ON</button>
-<button type="button" class="button6">OFF</button>
-
-<button type="button" class="button7">ON</button>
-<button type="button" class="button8">OFF</button>
-
-
-<div class="slidecontainer">
+<div class="slidecontainer" >
   <input type="range" min="1" max="100" value="0" class="slider" id="myRange">
   <p id="d">Value: <span id="demo"></span></p>
 </div>
 
+
+{{#each Lights }}
+
 <div class="slidecontainer1">
   <input type="range" min="1" max="100" value="0" class="slider1" id="myRange1">
-  <p id="d1">Value: <span id="demo1"></span></p>
+  <p id="d1">Value: <span id="demo1"></span>{{Light_number}} </p>
 </div>
+   
+   
+{{/each}}
 
 
-<div class="slidecontainer2">
-  <input type="range" min="1" max="100" value="0" class="slider2" id="myRange2">
-  <p>Value: <span id="demo2"></span></p>
-</div>
 
-
-<div class="slidecontainer3">
-  <input type="range" min="1" max="100" value="0" class="slider3" id="myRange3">
-  <p>Value: <span id="demo3"></span></p>
-
-</div>
 
 
 

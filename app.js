@@ -29,7 +29,8 @@ const lightroute = require('./Routes/LightsDate1');
 const controlRoute = require('./Routes/Ccontrol');
 const timeRoute = require('./Routes/Ctimed');
 const cctvroute = require('./routes/cctv');
-const airconRoute = require('./Routes/aircon2');
+const ambienceroute = require('./Routes/Cambience');
+const airconRoute = require('./Routes/aircon2')
 
 smartlivingDB.setUpDB(false);
 /*
@@ -105,7 +106,6 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 app.set('views',path.join(__dirname,'views'))
 
-const Lighttiming= require('./models/LightsDate')
 
 // Body parser middleware to parse HTTP body in order to read HTTP data
 app.use(bodyParser.urlencoded({
