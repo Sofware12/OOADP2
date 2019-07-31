@@ -18,8 +18,6 @@ const passport = require('passport');
 const fileUpload = require('express-fileupload');
 const fs = require('fs');
 
-
-
 /*
 * Loads routes file main.js in routes directory. The main.js determines which function
 * will be called based on the HTTP request and URL.

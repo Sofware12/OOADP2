@@ -8,9 +8,6 @@ const aircon = db.define('aircon', {
     time: {
         type: Sequelize.STRING
     },
-    duration: {
-        type: Sequelize.STRING
-    },
     temp: {
         type: Sequelize.STRING
     },

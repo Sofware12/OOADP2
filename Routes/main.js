@@ -121,8 +121,4 @@ router.get('/aircon', (req, res) =>{
 	res.render('aircon/aircon') //renders views/aircon.handlebars
 })
 
-router.get('/achistory', (req, res) =>{
-	res.render('aircon/achistory') //renders views/achistory.handlebars
-})
-
 module.exports = router;
