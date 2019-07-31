@@ -1,8 +1,4 @@
-<link rel="stylesheet" href="css/achistory.css">
-
-<div>
-    <h1 id="current">Aircon #1</h1>
-</div>
+<link rel="stylesheet" href="/css/achistory.css">
 
 <div>
     <h1 id="history">History Logs</h1>
@@ -14,52 +10,59 @@
     </form>
 </div>
 
-<div id="aclist">
-    <div id="ac1">
-        <h1>
-            Aircon #1
-        </h1>
-    </div>
-    <div id="ac2">
-        <h1>
-            Aircon #2
-        </h1>
-    </div>
-    <div id="ac3">
-        <h1>
-            Aircon #3
-        </h1>
-    </div>
-    <div id="ac4">
-        <h1>
-            Aircon #4
-        </h1>
-    </div>
-    <div id="ac5">
-        <h1>
-            Aircon #5
-        </h1>
-    </div>
+<div>
+    <table id="tableinfo">
+        <tr>
+            <th>Aircon</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Temp</th>
+            <th>Fan Speed</th>
+        </tr>
+        {{#if DataInfo}}
+        {{#each DataInfo}}
+        <tr>
+            <td>{{airconname}}</td>
+            <td>{{date}}</td>
+            <td>{{time}}</td>
+            <td>{{temp}}°C</td>
+            <td>{{fanspd}}</td>
+        </tr>
+        {{/each}}
+        {{/if}}
+    </table>
 </div>
 
-<div id="info">
-    <div>
-        <h1 id="date">Date</h1>
-    </div>
+<script>
 
-    <div>
-        <h1 id="time">Time</h1>
-    </div>
+    function changeaircon() {
+        var currentac = document.getElementById("current");
+        var newac = document.getElementById("ac1");
+        currentac.innerHTML = newac.innerHTML;
+    }
 
-    <div>
-        <h1 id="duration">Duration</h1>
-    </div>
+    function changeaircon2() {
+        var currentac = document.getElementById("current");
+        var newac = document.getElementById("ac2");
+        currentac.innerHTML = newac.innerHTML;
+    }
+    
+    function changeaircon3() {
+        var currentac = document.getElementById("current");
+        var newac = document.getElementById("ac3");
+        currentac.innerHTML = newac.innerHTML;
+    }
+    
+    function changeaircon4() {
+        var currentac = document.getElementById("current");
+        var newac = document.getElementById("ac4");
+        currentac.innerHTML = newac.innerHTML;
+    }
+    
+    function changeaircon5() {
+        var currentac = document.getElementById("current");
+        var newac = document.getElementById("ac5");
+        currentac.innerHTML = newac.innerHTML;
+    }
 
-    <div>
-        <h1 id="temp">Temp</h1>
-    </div>
-
-    <div>
-        <h1 id="fanspd">Fan Spd</h1>
-    </div>
-</div>
+</script>
