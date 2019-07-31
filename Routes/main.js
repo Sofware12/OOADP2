@@ -3,6 +3,8 @@ const router = express.Router();
 const light_logs=require('../models/LightsDate')
 const passport = require("passport")
 const cControl = require("../models/cControl")
+const lights_ids = require('../models/Light_number');
+
 
 router.use(passport.initialize());
 router.use(passport.session());
@@ -29,7 +31,21 @@ router.get('/showRegister', (req, res) => {
 //Yusuf's 
 
 router.get('/lights', (req, res) => {
-	res.render('Lights/Lightss') // renders views/Lightss.handlebars
+	lights_ids.findAll({ // SELECT * FROM Light_ids
+
+	}
+	).then((results) => {
+		console.log('Logs:', results) // each result in results has id and light_number
+		res.render('Lights/Lightss', {
+			Lights: results
+		})
+	}).catch(err => console.log(err))
+	
+
+	/*
+	res.render('Lights/Lightss', {
+
+	})*/ // renders views/Lightss.handlebars
 });
 
 //Xavier's
