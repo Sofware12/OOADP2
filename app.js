@@ -168,6 +168,7 @@ app.use('/cctv', cctvroute);
 
 app.use('/Ctimed',timeRoute);
 
+app.use('/cControl', controlRoute);
 
 app.use('/aircon', airconRoute);
 
