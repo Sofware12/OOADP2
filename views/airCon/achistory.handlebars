@@ -11,6 +11,12 @@
 </div>
 
 <div>
+    <form action="/aircon/delete">
+        <input type="submit" id="airconDelete" onclick="deletePopUp()" value="Delete History" />
+    </form>
+</div>
+
+<div>
     <table id="tableinfo">
         <tr>
             <th>Aircon</th>
@@ -63,6 +69,10 @@
         var currentac = document.getElementById("current");
         var newac = document.getElementById("ac5");
         currentac.innerHTML = newac.innerHTML;
+    }
+
+    function deletePopUp() {
+        alert("History Deleted");
     }
 
 </script>

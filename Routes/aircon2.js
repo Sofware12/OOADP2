@@ -4,9 +4,9 @@ const aircon = require('../models/aircon');
 const router = express.Router();
 
 router.post('/aircon', (req, res) => {
-    let airconname = req.body.airconname;
+    let airconname = req.body.currentAC;
     let today = new Date();
-    let date = today.getFullYear() + '-' + (today.getMonth()+1) + '-' + today.getDate();
+    let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     let todaytime = new Date();
     let time = todaytime.getHours() + ':' + todaytime.getMinutes();
     let temp = req.body.tempValue;
@@ -31,6 +31,15 @@ router.get('/achistory', (req, res) => {
         res.render('aircon/achistory', {
             DataInfo: DataInfo
         })
+    })
+})
+
+router.get('/delete', (req, res) => {
+    let airconId = req.params.id;
+    aircon.destroy({
+        truncate: true
+    }).then(() => {
+        res.redirect('/aircon/achistory');
     })
 })
 

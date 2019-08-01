@@ -16,21 +16,11 @@
 </div>
 
 <div id="aclist">
-    <h1 id="aircon1" onclick="changeaircon()">
-        Aircon #1
-    </h1>
-    <h1 id="aircon2" onclick="changeaircon2()">
-        Aircon #2
-    </h1>
-    <h1 id="aircon3" onclick="changeaircon3()">
-        Aircon #3
-    </h1>
-    <h1 id="aircon4" onclick="changeaircon4()">
-        Aircon #4
-    </h1>
-    <h1 id="aircon5" onclick="changeaircon5()">
-        Aircon #5
-    </h1>
+    <input type="text" id="aircon1" onclick="changeaircon()" value="Aircon #1" readonly>
+    <input type="text" id="aircon2" onclick="changeaircon2()" value="Aircon #2" readonly>
+    <input type="text" id="aircon3" onclick="changeaircon3()" value="Aircon #3" readonly>
+    <input type="text" id="aircon4" onclick="changeaircon4()" value="Aircon #4" readonly>
+    <input type="text" id="aircon5" onclick="changeaircon5()" value="Aircon #5" readonly>
 </div>
 
 <div>
@@ -43,10 +33,6 @@
     <input type="image" onclick="changename()" id="rename" src="../css/quill.png" width="70" height="90">
 </div>
 
-<div>
-    <button id="delete" onclick="deleteAC()">Delete</button>
-</div>
-
 <div id="temperature">
     <h3 id="temp">Temperature °C</h3>
     <input type="image" onclick="incrementValue()" id="up" src="../css/up_button.png" width="70" height="90">
@@ -56,7 +42,7 @@
 {{!-- Form to post values into database --}}
 <form action="/aircon/aircon" method="post" id="aircon">
     <div>
-        <h2 id="current" name="airconname">Aircon #1</h2>
+        <input type="text" id="current" name="currentAC" value="Aircon #1" readonly>
         <label class="switch" id="switch1">
             <input type="checkbox">
             <span class="slider round"></span>
@@ -77,10 +63,14 @@
         </div>
     </div>
 
-    <button type="submit" id="submitbutton">Submit</button>
+    <button type="submit" id="submitbutton" onclick="submitValues()">Submit</button>
 </form>
 
 <script>
+    function submitValues() {
+        alert("Submitted Changes");
+    }
+
     function addmoreaircon() {
         var header = document.createElement("header");
         var h1 = document.createElement("h1");
@@ -118,36 +108,31 @@
 
     function changename() {
         var newname = prompt("What do you want to change the name to?", "Aircon #1");
-        current.innerText = newname;
+        document.getElementById("current").value = newname;
     }
 
     function changeaircon() {
-        var currentac = document.getElementById("current");
-        var newac = document.getElementById("aircon1");
-        currentac.innerHTML = newac.innerHTML;
+        var newac = document.getElementById("aircon1").value;
+        document.getElementById("current").value = newac;
     }
 
     function changeaircon2() {
-        var currentac = document.getElementById("current");
-        var newac = document.getElementById("aircon2");
-        currentac.innerHTML = newac.innerHTML;
+        var newac = document.getElementById("aircon2").value;
+        document.getElementById("current").value = newac;
     }
     
     function changeaircon3() {
-        var currentac = document.getElementById("current");
-        var newac = document.getElementById("aircon3");
-        currentac.innerHTML = newac.innerHTML;
+        var newac = document.getElementById("aircon3").value;
+        document.getElementById("current").value = newac;
     }
     
     function changeaircon4() {
-        var currentac = document.getElementById("current");
-        var newac = document.getElementById("aircon4");
-        currentac.innerHTML = newac.innerHTML;
+        var newac = document.getElementById("aircon4").value;
+        document.getElementById("current").value = newac;
     }
     
     function changeaircon5() {
-        var currentac = document.getElementById("current");
-        var newac = document.getElementById("aircon5");
-        currentac.innerHTML = newac.innerHTML;
+        var newac = document.getElementById("aircon5").value;
+        document.getElementById("current").value = newac;
     }    
 </script>
