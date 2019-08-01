@@ -1,21 +1,23 @@
 <html>
+
 <head>
-<link rel="stylesheet" type="text/css" href="css/cctv.css">
+    <link rel="stylesheet" type="text/css" href="css/cctv.css">
 </head>
+
 <body>
-<a id="CCTVControls" href="/cctv">
-    CCTV Controls
-</a>
-<p id="UploadVideos">
-    Upload Videos
-</p>
-<form ref='uploadForm' 
-      id='uploadForm' 
-      action='http://localhost:5000/upload' 
-      method='post' 
-      encType="multipart/form-data">
-        <input type="file" name="videoFootage" />
-        <input type='submit' value='Upload!' />
-</form>
-</body>    
+    <a id="CCTVControls" href="/cctv">
+        CCTV Controls
+    </a>
+    <p id="UploadVideos">
+        Upload Videos
+    </p>
+    <form ref='uploadForm' id='uploadForm' action='http://localhost:5000/upload' method='post'
+        encType="multipart/form-data">
+        <div style="margin-left:33%; margin-top: 10%">
+            <input type="file" name="videoFootage" style="color: white" />
+            <input type='submit' value='Upload!' />
+        </div>
+    </form>
+</body>
+
 </html>

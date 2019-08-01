@@ -28,7 +28,7 @@ p#Videos, p#SecurityCameras, p#DeleteVideos, p#ViewVideos, p#UploadVideos {
 }
 
 /*CSS for Add Camera button*/
-p#AddCamera {
+a#AddCamera, p#NoCameras {
     text-align: center;
     font-size: 25px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -168,4 +168,13 @@ a.viewButton:active {
 label#cameraName {
   font-size: 20px;
   color: cyan;
+}
+
+button#saveData {
+  width: 20%;
+  height: 100%;
+}
+
+.container {
+  margin-bottom: 15px;
 }

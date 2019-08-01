@@ -1,0 +1,32 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/cctv.css">
+</head>
+<body>
+<a id="CCTVControls" href="/cctv">
+    CCTV Controls
+</a>
+<p id="UploadVideos">
+    Add Camera
+</p>
+<form action="cctv/cctvAdd" method="POST">
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <label id="cameraName">Camera Name:</label>
+            <input type="text" name="name"> 
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <label id="cameraName">Power:</label>
+            <label class="switch">
+                    <input type="checkbox" onclick="changeValue(this)"name="state" value="OFF">
+                    <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <button type="submit" id="saveData">Save Changes</button>
+    </div>
+</form>
+</body>    
+</html>
