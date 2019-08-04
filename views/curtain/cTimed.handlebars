@@ -173,19 +173,19 @@
 					<div class="ambience-box">
 						<input type="radio" id="day" name="ambience" value="day" checked>
 						<img src="../css/morning.png" onclick="document.getElementById('day').checked = true;"
-							height="100" width="100">
+							height="175" width="175">
 						</input>
 						<input type="radio" id="night" name="ambience" value="night">
 						<img src="../css/night.jpg" onclick="document.getElementById('night').checked = true;"
-							height="100" width="100">
+							height="175" width="175">
 						</input>
 						<input type="radio" id="movie" name="ambience" value="movie">
 						<img src="../css/movie.png" onclick="document.getElementById('movie').checked = true;"
-							height="100" width="100">
+							height="175" width="175">
 						</input>
 						<input type="radio" id="party" name="ambience" value="party">
 						<img src="../css/party.png" onclick="document.getElementById('party').checked = true;"
-							height="100" width="100">
+							height="175" width="175">
 						</input>
 					</div>
 				</article>
@@ -193,4 +193,9 @@
 			</div>
 		</div>
 	</form>
+	<div>
+		<form action="/Ctimed/cAmbience" method="GET">
+			<input type="submit" id="hist" value="Time and Ambience history">
+		</form>
+	</div>
 </body>

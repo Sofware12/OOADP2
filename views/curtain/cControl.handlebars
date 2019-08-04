@@ -10,7 +10,7 @@
 
 <body>
     <form action="/curtainControl" method="POST">
-        <div class="container">           
+        <div class="container">
             <div class="col">
                 <img id="SelectedPosition" src="../css/half.png" />
             </div>
@@ -23,7 +23,7 @@
                         <option value="3" id="3">3</option>
                         <option value="4" id="4">4</option>
                         <option value="5" id="5">5</option>
-                        <option value="6" id="6">6</option> 
+                        <option value="6" id="6">6</option>
                         <option value="7" id="7">7</option>
                         <option value="8" id="8">8</option>
                         <option value="9" id="9">9</option>
@@ -50,21 +50,25 @@
             </div>
             <div id="box">
                 <ul>
-                    <input type="radio" id="open" name="preset" value="open"><img src="../css/open.png" onclick="showPicture(this.src)">
+                    <input type="radio" id="open" name="preset" value="open"><img src="../css/open.png"
+                        onclick="showPicture(this.src)">
                     </input>
-                    <input type="radio" id="half" name="preset" value="open"><img src="../css/half.png" onclick="showPicture(this.src)">
+                    <input type="radio" id="half" name="preset" value="open"><img src="../css/half.png"
+                        onclick="showPicture(this.src)">
                     </input>
-                    <input type="radio" id="covered" name="preset" value="covered"><img src="../css/covered.png" onclick="showPicture(this.src)">
+                    <input type="radio" id="covered" name="preset" value="covered"><img src="../css/covered.png"
+                        onclick="showPicture(this.src)">
                     </input>
                 </ul>
             </div>
-            {{!-- <button type="submit" formaction="/cControl">Set</button> --}}
-            <button type="submit" id="submitbutton" onclick="submitPreset()">Set</button>
-            <div>
-                <form action="/curtain/cCLogs" method="GET">
-                    <input type="submit" id="hist" value="Preset History">
-                </form>
-            </div>
+            <button type="submit" formaction="/cControl">Set</button>
+            {{!-- <button type="submit" id="submitbutton" onclick="submitPreset()">Set</button> --}}
+
         </div>
     </form>
+    <div>
+        <form action="/cControl" method="GET">
+            <input type="submit" id="hist" value="Preset History">
+        </form>
+    </div>
 </body>
