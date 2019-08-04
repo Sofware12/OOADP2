@@ -68,12 +68,10 @@ router.get('/curtainTimed', ensureAuthenticated, (req, res) => {
 });
 
 router.get('/curtainControl', ensureAuthenticated, (req, res) => {
-	res.render('curtain/cControl') // renders views/cControl.handlebars
+    res.render('curtain/cControl') // renders views/cControl.handlebars
 });
 
-router.get('/curtainLog', ensureAuthenticated, (req, res) => {
-	res.render('curtain/Logs')// renders views/Logs.handlebars
-});
+
 
 //Ryan's
 

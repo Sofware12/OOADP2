@@ -1,3 +1,32 @@
 <div class="container">
-
+    {{#if ambiences}}
+    {{#each ambiences}}
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Hour</th>
+                <th scope="col">Minute</th>
+                <th scope="col">Second</th>
+                <th scope="col">Sound</th>
+                <th scope="col">Ambience</th>
+            </tr>
+        </thead>
+        <tbody>
+            <th scope="row">1</th>
+            <td>{{hour}}</td>
+            <td>{{minute}}</td>
+            <td>{{second}}</td>
+            <td>{{sound}}</td>
+            <td>{{ambience}}</td>
+            <a href="curtain/delete/{{id}}" data-toggle="confirmation" data-title="Confirm delete?">
+                <i class="far fa-trash-alt"></i>
+                Delete
+            </a>
+        </tbody>
+    </table>
+    {{/each}}
+    {{else}}
+    <h1>There is no history of Ambience.</h1>
+    {{/if}}
 </div>

@@ -78,51 +78,8 @@ body {
 	height: 350px;
 	display: block;
 	margin: auto;
-	padding: 0px 0px 10px 5px;
 }
 
 label {
 	color: white;
 }
-
-/* #left1 {
-	width: 200px;
-	height: 200px;
-	position: relative;
-	top: 360px;
-	cursor: pointer;
-}
-
-#right1 {
-	width: 200px;
-	height: 200px;
-	position: relative;
-	top: 150px;
-	right: 200px;
-	-ms-transform: rotate(180deg);
-	-webkit-transform: rotate(180deg);
-	transform: rotate(180deg);
-	cursor: pointer;
-}
-
-#left2 {
-	width: 200px;
-	height: 200px;
-	float: right;
-	position: relative;
-	bottom: 400px;
-	cursor: pointer;
-}
-
-#right2 {
-	width: 200px;
-	height: 200px;
-	-ms-transform: rotate(180deg); 
-	-webkit-transform: rotate(180deg); 
-	transform: rotate(180deg);
-	float: right;
-	position: relative;
-	bottom: 200px;
-	left: 200px;
-	cursor: pointer;
-} */

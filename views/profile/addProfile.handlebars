@@ -4,12 +4,12 @@
         <div class="row mb-2">
             <div class="col-lg-4 mb-5">
                 <div class="profile-img">
-                    <img src="user.png">
+                    {{!-- <img src="./images/user.png">
                     <form action="/profile" method='post' enctype="multipart/form-data">
                         Change Photo
                         <input type="file" name="file" />
                         <input type='submit' value='Change Picture' />4
-                    </form>
+                    </form> --}}
                 </div>
             </div>
         </div>
@@ -37,7 +37,7 @@
                     <div class="col-12 col-sm-5 col-md-5 col-lg-6 mb-4">
                         <label class="font-italic">Age</label>
                         <br>
-                        <input id="age" type="number" width="200" name="Age">
+                        <input id="age" type="number" min="1" max="100" width="200" name="Age">
                     </div>
                     <div class="col-12 col-sm-7 col-md-7 col-lg-6">
                         <label class="font-italic">Gender</label>

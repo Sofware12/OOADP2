@@ -9,26 +9,26 @@ const fileUpload = require('express-fileupload')
 router.use(fileUpload());
 router.use(express.static('public/images/Profile'));
 
-router.post('/profile', (req, res) => {
-    if(Object.keys(req.files).length == 0) {
-        res.render('profile/profile', {
-            err: 'File not uploaded'
-        });
-    }
+// router.post('/profile', (req, res) => {
+//     if(Object.keys(req.files).length == 0) {
+//         res.render('profile/profile', {
+//             err: 'File not uploaded'
+//         });
+//     }
 
-    let file = req.files.file;
+//     let file = req.files.file;
 
-    sampleFile.mv('public/images/user.png',(err) => {
-        if (err) {
-            res.render('profile/profile', {
-                err: 'Error'
-            })
-        } else {
-            alertMessage(res, 'success', 'Picture Updated', 'fas fa-sign-in-alt', false);
-            res.redirect('profile');
-        }      
-    });
-});
+//     sampleFile.mv('public/images/user.png',(err) => {
+//         if (err) {
+//             res.render('profile/profile', {
+//                 err: 'Error'
+//             })
+//         } else {
+//             alertMessage(res, 'success', 'Picture Updated', 'fas fa-sign-in-alt', false);
+//             res.redirect('profile');
+//         }      
+//     });
+// });
 
 //Shows edit profile page
 router.get('/edit/:id', (req, res) => {

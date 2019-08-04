@@ -164,15 +164,9 @@
 						<br>
 						<select id="mySelect" name="sound"></select>
 					</div>
-					<button id="mySetButton" type="submit" formaction="/cTimed">Alarm Set</button>
-					<a href="/curtain/delete/{{id}}" data-toggle="confirmation" data-title="Confirm delete?"
-						id="myClearButton">Alarm Clear</a>
 					<br><br>
 				</div>
 			</div>
-	</form>
-	<form method="POST">
-		<div class="container">
 			<div class="right-side">
 				<article>
 					<h1>Ambience</h1>
@@ -193,9 +187,9 @@
 						<img src="../css/party.png" onclick="document.getElementById('party').checked = true;"
 							height="100" width="100">
 						</input>
-						<button id="setting" type="submit" formaction="/Ctimed/cAmbience">Set Ambience</button>
 					</div>
 				</article>
+				<button id="setting" type="submit" formaction="/Ctimed/cAmbience">Set</button>
 			</div>
 		</div>
 	</form>

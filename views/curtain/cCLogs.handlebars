@@ -1,6 +1,6 @@
 <div class="container">
-    {{#if CControl}}
-    {{#each CControl}}
+    {{#if controls}}
+    {{#each controls}}
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -17,8 +17,13 @@
             <td>{{preset}}</td>
         </tbody>
     </table>
+    <a href="/curtain/delete/{{id}}" data-toggle="confirmation" data-title="Confirm delete?">
+    <i class="far fa-trash-alt"></i>
+    Delete
+    </a>
     {{/each}}
     {{else}}
     <h1>There is no history of sets.</h1>
+    </a>
     {{/if}}
 </div>
