@@ -42,7 +42,7 @@
 {{!-- Form to post values into database --}}
 <form action="/aircon/aircon" method="post" id="aircon">
     <div>
-        <input type="text" id="current" name="currentAC" value="Aircon #1" readonly>
+        <input type="text" id="current" name="currentAC" value="{{DataInfo.airconname}}" readonly>
         <label class="switch" id="switch1">
             <input type="checkbox">
             <span class="slider round"></span>
@@ -50,7 +50,7 @@
     </div>
 
     <div>
-        <input type="text" id="number" name="tempValue" value="25">
+        <input type="text" id="number" name="tempValue" value="{{DataInfo.temp}}" readonly>
 
         <div id="fanspeed">
             <h4 id="fan">Fan Speed</h4>

@@ -4,6 +4,7 @@ const light_logs=require('../models/LightsDate')
 const passport = require("passport")
 const cControl = require("../models/cControl")
 const lights_ids = require('../models/Light_number');
+const aircon = require('../models/aircon');
 
 const ensureAuthenticated = require('../helpers/auth')
 
@@ -98,7 +99,31 @@ router.get('/cctvAdd', (req, res) => {
 //Nicholas'
 
 router.get('/aircon', (req, res) =>{
-	res.render('aircon/aircon') //renders views/aircon.handlebars
+	aircon.findAll({
+    order: [
+		['temp', 'DESC']
+	],
+	limit: 1
+    }).then(DataInfo => {
+        console.log(DataInfo);
+        res.render('aircon/aircon', {
+            DataInfo: DataInfo[0]
+        })
+    })
+})
+
+router.get('/aircon', (req, res) =>{
+	aircon.findAll({
+    order: [
+		['airconname', 'DESC']
+	],
+	limit: 1
+    }).then(DataInfo => {
+        console.log(DataInfo);
+        res.render('aircon/aircon', {
+            DataInfo: DataInfo[0]
+        })
+    })
 })
 
 module.exports = router;
