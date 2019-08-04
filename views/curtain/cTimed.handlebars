@@ -152,51 +152,48 @@
 			<div class="left-side">
 				<h1>Timer</h1>
 				<div id="myBox">
-					<div id="time"></div>
-					<br>
-					<h3>Set Alarm Time:</h3>
-					<select id="alarmHrs" name="hour"></select>
-					<select id="alarmMins" name="minute"></select>
-					<select id="alarmSecs" name="second"></select>
-					<br><br>
-					<div id="myDiv">
-						<label>Choose Alarm Sound:</label>
-						<br>
-						<select id="mySelect" name="sound"></select>
-					</div>
-					<button id="mySetButton" type="submit" formaction="/cTimed">Alarm Set</button>
-					<a href="/curtain/delete/{{id}}" data-toggle="confirmation" data-title="Confirm delete?"
-						id="myClearButton">Alarm Clear</a>
-					<br><br>
-				</div>
+                    <div id="time"></div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h3>Set Alarm Time:</h3>
+                    <select id="alarmHrs" name="hour"></select>
+                    <select id="alarmMins" name="minute"></select>
+                    <select id="alarmSecs" name="second"></select>
+                </div>
 			</div>
-	</form>
-	<form method="POST">
-		<div class="container">
 			<div class="right-side">
 				<article>
 					<h1>Ambience</h1>
 					<div class="ambience-box">
 						<input type="radio" id="day" name="ambience" value="day" checked>
 						<img src="../css/morning.png" onclick="document.getElementById('day').checked = true;"
-							height="100" width="100">
+							height="175" width="175">
 						</input>
 						<input type="radio" id="night" name="ambience" value="night">
 						<img src="../css/night.jpg" onclick="document.getElementById('night').checked = true;"
-							height="100" width="100">
+							height="175" width="175">
 						</input>
 						<input type="radio" id="movie" name="ambience" value="movie">
 						<img src="../css/movie.png" onclick="document.getElementById('movie').checked = true;"
-							height="100" width="100">
+							height="175" width="175">
 						</input>
 						<input type="radio" id="party" name="ambience" value="party">
 						<img src="../css/party.png" onclick="document.getElementById('party').checked = true;"
-							height="100" width="100">
+							height="175" width="175">
 						</input>
-						<button id="setting" type="submit" formaction="/Ctimed/cAmbience">Set Ambience</button>
 					</div>
 				</article>
+				<button id="setting" type="submit" formaction="/Ctimed/cAmbience">Set</button>
 			</div>
 		</div>
 	</form>
+	<div>
+		<form action="/Ctimed/cAmbience" method="GET">
+			<input type="submit" id="hist" value="Time and Ambience history">
+		</form>
+	</div>
 </body>

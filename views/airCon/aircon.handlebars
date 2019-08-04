@@ -1,10 +1,5 @@
 <link rel="stylesheet" href="/css/aircon.css">
 
-<div id="add">
-    <input type="text" name="addaircon" value="Aircon #"></input>
-    <button onclick="addmoreaircon()">Add</button>
-</div>
-
 <div id="all">
     <h1>
         All Control
@@ -42,7 +37,7 @@
 {{!-- Form to post values into database --}}
 <form action="/aircon/aircon" method="post" id="aircon">
     <div>
-        <input type="text" id="current" name="currentAC" value="Aircon #1" readonly>
+        <input type="text" id="current" name="currentAC" value="{{DataInfo.airconname}}" readonly>
         <label class="switch" id="switch1">
             <input type="checkbox">
             <span class="slider round"></span>
@@ -50,7 +45,7 @@
     </div>
 
     <div>
-        <input type="text" id="number" name="tempValue" value="25">
+        <input type="text" id="number" name="tempValue" value="{{DataInfo.temp}}" readonly>
 
         <div id="fanspeed">
             <h4 id="fan">Fan Speed</h4>
@@ -69,15 +64,6 @@
 <script>
     function submitValues() {
         alert("Submitted Changes");
-    }
-
-    function addmoreaircon() {
-        var header = document.createElement("header");
-        var h1 = document.createElement("h1");
-        newtext = document.getElementById("addaircon").value;
-        h1.textContent = newtext;
-        header.appendChild(h1);
-        document.body.appendChild(header);
     }
 
     function incrementValue() {

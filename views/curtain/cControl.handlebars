@@ -3,18 +3,21 @@
     function showPicture(img) {
         document.getElementById("SelectedPosition").src = img;
     }
+    function submitPreset() {
+        alert("Submitted Sets");
+    }
 </script>
 
 <body>
-    <form method="POST" action="/cControl">
+    <form action="/curtainControl" method="POST">
         <div class="container">
-            <div class="col-8">
+            <div class="col">
                 <img id="SelectedPosition" src="../css/half.png" />
             </div>
-            <div id="left" class="col">
-                <label>LEFT</label>
+            <div id="left">
+                <label id="left2">LEFT</label>
                 <div class="form-check">
-                    <select class="form-check-input" id="Left" name="Left">
+                    <select class="form-check-input" id="leftform" name="Left">
                         <option value="1" id="1">1</option>
                         <option value="2" id="2">2</option>
                         <option value="3" id="3">3</option>
@@ -28,10 +31,10 @@
                     </select>
                 </div>
             </div>
-            <div id="right" class="col">
-                <label>RIGHT</label>
+            <div id="right">
+                <label id="right2">RIGHT</label>
                 <div class="form-check">
-                    <select class="form-check-input" id="Right" name="Right">
+                    <select class="form-check-input" id="rightform" name="Right">
                         <option value="1" id="1">1</option>
                         <option value="2" id="2">2</option>
                         <option value="3" id="3">3</option>
@@ -47,16 +50,31 @@
             </div>
             <div id="box">
                 <ul>
-                    <input type="button" id="button"><img src="../css/open.png" onclick="showPicture(this.src)" name="preset" value="open" />
-                    </input>
-                    <input type="button" id="button"><img src="../css/half.png" onclick="showPicture(this.src)" name="preset" value="half"/>
-                    </input>
-                    <input type="button" id="button"><img src="../css/covered.png" onclick="showPicture(this.src)" name="preset" value="covered"/>
-                    </input>
+                    <div id="open">
+                        <input type="radio" name="preset" value="open"><img src="../css/open.png"
+                            onclick="showPicture(this.src)">
+                        </input>
+                    </div>
+                    <div id="half">
+                        <input type="radio" name="preset" value="open"><img src="../css/half.png"
+                            onclick="showPicture(this.src)">
+                        </input>
+                    </div>
+                    <div id="covered">
+                        <input type="radio" name="preset" value="covered"><img src="../css/covered.png"
+                            onclick="showPicture(this.src)">
+                        </input>
+                    </div>
                 </ul>
             </div>
-            <button type="submit" disabled style="display: none" aria-hidden="true"></button>
-            <input id="butAddProfile" class="btn btn-outline-danger" type="submit" value="Submit">
+            <button type="submit" id="setCurtain" formaction="/cControl">Set</button>
+            {{!-- <button type="submit" id="submitbutton" onclick="submitPreset()">Set</button> --}}
+
         </div>
     </form>
+    <div>
+        <form action="/cControl" method="GET">
+            <input type="submit" id="hist" value="Preset History">
+        </form>
+    </div>
 </body>

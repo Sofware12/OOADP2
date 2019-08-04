@@ -66,7 +66,11 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-h1, h2, h3, h4 {
+h1 {
+    color:  orange;
+}
+
+h2, h3, h4 {
     color: cyan;
 }
 
@@ -121,11 +125,6 @@ h3, h4 {
     position: absolute;
     left: 210px;
     top: 10px;
-}
-
-#add {
-    position: absolute;
-    top: 200px;
 }
 
 #history {
