@@ -149,7 +149,7 @@ label {
 #leftform {
 	position: absolute;
 	background-color: orange;
-	font-size: 50px;
+	font-size: 30px;
 	width: 500%;
 	bottom: 60px;
 	left: 35x;
@@ -158,7 +158,7 @@ label {
 #rightform {
 	position: absolute;
 	background-color: orange;
-	font-size: 50px;
+	font-size: 30px;
 	width: 500%;
 	bottom: 60px;
 	left: -85px;

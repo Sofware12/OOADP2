@@ -26,7 +26,7 @@ body {
 }
  
 .right-side {
-    background: linear-gradient(rgba(0, 0, 0, 0.788), rgba(164, 222, 102, 0.10)), url(../css/cAmbience.gif);
+    background: linear-gradient(rgba(0, 0, 0, 0.788), rgba(164, 222, 102, 0.10)), url(../css/ambience.jpg);
     background-size: cover;
     background-position: center;
     flex: 1;
@@ -61,6 +61,9 @@ body {
 	margin: 0 auto;
 	color: #fff;
 }
+#myBox2 {
+    text-align: center;
+}
 #time {
     font-size: 65px;
     margin-top: -65px;
@@ -81,17 +84,7 @@ h3 {
     font-weight: bold;
     color: #cc0052;
 }
-#mySetButton, #myClearButton {
-    border-radius: 10px;
-    font-weight: bold;
-    background-color: #d3d5cc;
-}
-#mySetButton:hover {
-    background-color: #b4b4b2;
-}
-#myClearButton:hover {
-    background-color: #b4b4b2;
-}
+
 #alarmHrs, #alarmMins, #alarmSecs {
     width: 55px;
     padding-left: 4px;
@@ -130,7 +123,16 @@ h3 {
     position: absolute;
     background-color: orange;
     top: 650px;
-    right: 650px;
+    right: 375px;
+    width: 300px;
+    height: 60px;
+    font-size: 20px;
+}
+#setting {
+    position: absolute;
+    background-color: chocolate;
+    top: 650px;
+    right: 850px;
     width: 300px;
     height: 60px;
     font-size: 20px;
