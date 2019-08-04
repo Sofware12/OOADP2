@@ -96,6 +96,10 @@ router.get('/cctvAdd', (req, res) => {
 	res.render('cctv/cctvAdd')
 });
 
+router.get('/cctvEdit', (req, res) => {
+	res.render('cctv/cctvEdit')
+});
+
 //Nicholas'
 
 router.get('/aircon', (req, res) =>{

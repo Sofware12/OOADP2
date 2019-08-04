@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="css/cCLogs.css">
+
 <div>
     <form action="/curtainControl">
         <input type="submit" id="ccontrol" value="Back" />
@@ -7,7 +9,7 @@
 <div class="container">
     {{#if controls}}
     {{#each controls}}
-    <table class="table">
+    <table class="table" id="logsTable">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">Left</th>

@@ -63,15 +63,33 @@ body {
 	margin: auto;
 	border-radius: 20px;
 	text-align: center ;
-	}
+	position: absolute;
+	top: 500px;
+	left: 390px;
+}
 
-	#box ul {
-		padding: inherit;
-	}
+#open {
+	position: absolute;
+	left: 120px;
+}
 
-	#box img:hover {
-		border: 5pxbsolid black;
-	}
+#half {
+	position: absolute;
+	left: 310px;
+}
+
+#covered {
+	position: absolute;
+	left: 500px;
+}
+
+#box ul {
+	padding: inherit;
+}
+
+#box img:hover {
+	border: 5pxbsolid black;
+}
 
 #SelectedPosition {
 	width: 400px;
@@ -82,4 +100,66 @@ body {
 
 label {
 	color: white;
+}
+
+#left {
+	position: absolute;
+}
+
+#right {
+	position: absolute;
+	left: 1300px;
+}
+
+#setCurtain {
+	position: absolute;
+	left: 620px;
+	top: 650px;
+	width: 8%;
+	height: 8%;
+	background-color: orange;
+}
+
+#hist {
+	position: absolute;
+	left: 800px;
+	top: 650px;
+	width: 10%;
+	height: 8%;
+	background-color:red;
+}
+
+#left2 {
+	color: cyan;
+	font-size: 50px;
+	position: absolute;
+	bottom: 150px;
+	font-weight: bold;
+}
+
+#right2 {
+	color: cyan;
+	font-size: 50px;
+	position: absolute;
+	bottom: 150px;
+	font-weight: bold;
+	left: -130px;
+}
+
+#leftform {
+	position: absolute;
+	background-color: orange;
+	font-size: 50px;
+	width: 500%;
+	bottom: 60px;
+	left: 35x;
+}
+
+#rightform {
+	position: absolute;
+	background-color: orange;
+	font-size: 50px;
+	width: 500%;
+	bottom: 60px;
+	left: -85px;
 }

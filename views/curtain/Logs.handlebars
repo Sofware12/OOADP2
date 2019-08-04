@@ -1,9 +1,11 @@
+<link rel="stylesheet" href="/css/Logs.css">
+
 <div>
     <form action="/curtainTimed">
         <input type="submit" id="ctime" value="Back"/>
     </form>
 </div>
-<div class="container">
+<div class="container" id="logsTable">
     {{#if ambiences}}
     {{#each ambiences}}
     <table class="table">
