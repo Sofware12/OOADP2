@@ -3,10 +3,13 @@
     function showPicture(img) {
         document.getElementById("SelectedPosition").src = img;
     }
+    function submitPreset() {
+        alert("Submitted Sets");
+    }
 </script>
 
 <body>
-    <form method="POST">
+    <form action="/curtainControl" method="POST">
         <div class="container">           
             <div class="col">
                 <img id="SelectedPosition" src="../css/half.png" />
@@ -55,7 +58,13 @@
                     </input>
                 </ul>
             </div>
-            <button type="submit" formaction="/cControl">Set</button>
+            {{!-- <button type="submit" formaction="/cControl">Set</button> --}}
+            <button type="submit" id="submitbutton" onclick="submitPreset()">Set</button>
+            <div>
+                <form action="/curtain/cCLogs" method="GET">
+                    <input type="submit" id="hist" value="Preset History">
+                </form>
+            </div>
         </div>
     </form>
 </body>
