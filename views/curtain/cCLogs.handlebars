@@ -1,6 +1,18 @@
+<div>
+    <form action="/cControl">
+        <input type="submit" id="ccontrol" value="Back" />
+    </form>
+</div>
+
 <div class="container">
     {{#if controls}}
     {{#each controls}}
+    <div>
+        <form action="/cControl/delete">
+            <input type="submit" id="ccontrolDel" value="Delete control hist">
+        </form>
+    </div>
+
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -18,8 +30,8 @@
         </tbody>
     </table>
     <a href="/curtain/delete/{{id}}" data-toggle="confirmation" data-title="Confirm delete?">
-    <i class="far fa-trash-alt"></i>
-    Delete
+        <i class="far fa-trash-alt"></i>
+        Delete
     </a>
     {{/each}}
     {{else}}
