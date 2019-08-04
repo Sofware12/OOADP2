@@ -15,9 +15,9 @@
                 <img id="SelectedPosition" src="../css/half.png" />
             </div>
             <div id="left">
-                <label>LEFT</label>
+                <label id="left2">LEFT</label>
                 <div class="form-check">
-                    <select class="form-check-input" id="Left" name="Left">
+                    <select class="form-check-input" id="leftform" name="Left">
                         <option value="1" id="1">1</option>
                         <option value="2" id="2">2</option>
                         <option value="3" id="3">3</option>
@@ -32,9 +32,9 @@
                 </div>
             </div>
             <div id="right">
-                <label>RIGHT</label>
+                <label id="right2">RIGHT</label>
                 <div class="form-check">
-                    <select class="form-check-input" id="Right" name="Right">
+                    <select class="form-check-input" id="rightform" name="Right">
                         <option value="1" id="1">1</option>
                         <option value="2" id="2">2</option>
                         <option value="3" id="3">3</option>
@@ -50,18 +50,24 @@
             </div>
             <div id="box">
                 <ul>
-                    <input type="radio" id="open" name="preset" value="open"><img src="../css/open.png"
-                        onclick="showPicture(this.src)">
-                    </input>
-                    <input type="radio" id="half" name="preset" value="open"><img src="../css/half.png"
-                        onclick="showPicture(this.src)">
-                    </input>
-                    <input type="radio" id="covered" name="preset" value="covered"><img src="../css/covered.png"
-                        onclick="showPicture(this.src)">
-                    </input>
+                    <div id="open">
+                        <input type="radio" name="preset" value="open"><img src="../css/open.png"
+                            onclick="showPicture(this.src)">
+                        </input>
+                    </div>
+                    <div id="half">
+                        <input type="radio" name="preset" value="open"><img src="../css/half.png"
+                            onclick="showPicture(this.src)">
+                        </input>
+                    </div>
+                    <div id="covered">
+                        <input type="radio" name="preset" value="covered"><img src="../css/covered.png"
+                            onclick="showPicture(this.src)">
+                        </input>
+                    </div>
                 </ul>
             </div>
-            <button type="submit" formaction="/cControl">Set</button>
+            <button type="submit" id="setCurtain" formaction="/cControl">Set</button>
             {{!-- <button type="submit" id="submitbutton" onclick="submitPreset()">Set</button> --}}
 
         </div>

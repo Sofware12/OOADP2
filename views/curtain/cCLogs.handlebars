@@ -1,5 +1,7 @@
+<link rel="stylesheet" href="css/cCLogs.css">
+
 <div>
-    <form action="/cControl">
+    <form action="/curtainControl">
         <input type="submit" id="ccontrol" value="Back" />
     </form>
 </div>
@@ -7,13 +9,7 @@
 <div class="container">
     {{#if controls}}
     {{#each controls}}
-    <div>
-        <form action="/cControl/delete">
-            <input type="submit" id="ccontrolDel" value="Delete control hist">
-        </form>
-    </div>
-
-    <table class="table">
+    <table class="table" id="logsTable">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">ID</th>
