@@ -1,10 +1,14 @@
+<div>
+    <form action="/curtainTimed">
+        <input type="submit" id="ctime" value="Back"/>
+    </form>
+</div>
 <div class="container">
     {{#if ambiences}}
     {{#each ambiences}}
     <table class="table">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">ID</th>
                 <th scope="col">Hour</th>
                 <th scope="col">Minute</th>
                 <th scope="col">Second</th>
@@ -13,7 +17,6 @@
             </tr>
         </thead>
         <tbody>
-            <th scope="row">1</th>
             <td>{{hour}}</td>
             <td>{{minute}}</td>
             <td>{{second}}</td>
