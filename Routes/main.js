@@ -91,8 +91,8 @@ router.get('/uploadFile', (req, res) => {
 	res.render('cctv/uploadFile')
 });
 
-router.get('/cctv1', (req, res) => {
-	res.render('cctv/cctv1')
+router.get('/cctvAdd', (req, res) => {
+	res.render('cctv/cctvAdd')
 });
 
 //Nicholas'

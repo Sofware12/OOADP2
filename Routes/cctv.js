@@ -1,15 +1,15 @@
 const db = require('../config/DBConfig');
 const express = require('express');
 const router = express();
-const CCTV = require('../models/cctv');
+const cameras = require('../models/cctv');
 
-router.post('/cctv', (req, res) => {
-    let name = req.body.name1;
+router.post('/cctvAdd', (req, res) => {
+    let name = req.body.name;
     let state = req.body.state;
 
     cameras.create({
-        name,
-        state
+        name: name,
+        state: state,
     }).then((cctv) => {
         res.redirect('/cctv/cctv');
     }).catch(err => console.log(err));
@@ -17,13 +17,12 @@ router.post('/cctv', (req, res) => {
 
 router.get('/cctv', (req, res) => {
     cameras.findAll({
-        order: [
-			['title', 'ASC']
-		],
 		raw: true
-    }).then((cctv) => {
-        res.render('/cctv/cctv');
-    });
+    }).then((cameras) => {
+        res.render('cctv/cctv', {
+            cameras
+        });
+    }).catch(err => console.log(err));
 });
 
 module.exports = router;

@@ -74,9 +74,42 @@ h3, h4 {
     font-size: 45px;
 }
 
-#aclist {
+#aircon1, #aircon2, #aircon3, #aircon4, #aircon5 {
+    color: cyan;
+    background: transparent;
+    border: none;
+    font-size: 45px;
+    width: 13%;
+}
+
+#aircon1 {
     position: absolute;
     top: 250px;
+    left: 230px;
+}
+
+#aircon2 {
+    position: absolute;
+    left: 230px;
+    bottom: 380px;
+}
+
+#aircon3 {
+    position: absolute;
+    left: 230px;
+    bottom: 324px;
+}
+
+#aircon4 {
+    position: absolute;
+    left: 230px;
+    bottom: 270px;
+}
+
+#aircon5 {
+    position: absolute;
+    left: 230px;
+    bottom: 213px;
 }
 
 #all {
@@ -110,6 +143,10 @@ h3, h4 {
     font-size: 400%;
     left: 600px;
     top: 100px;
+    background: transparent;
+    border: none;
+    color: cyan;
+    width: 20%;
 }
 
 #rename {
@@ -118,15 +155,6 @@ h3, h4 {
     width: 5%;
     top: 120px;
     left: 1050px;
-}
-
-#delete {
-    height: 8%;
-    width: 8%;
-    position: absolute;
-    background-color: red;
-    left: 1200px;
-    top: 120px;
 }
 
 #switch1 {
@@ -158,8 +186,8 @@ h3, h4 {
     color: orange;
     width: 100px;
     height: 100px;
-    left: 90px;
-    top: 190px;
+    left: 700px;
+    top: 440px;
     font-size: 80px;
     border-radius: 10px;
 }

@@ -1,6 +1,6 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="css/cctv.css">
+<link rel="stylesheet" type="text/css" href="/css/cctv.css">
 </head>
 <body>
 <a id="CCTVControls" href="/cctv">
@@ -9,75 +9,32 @@
 <p id="SecurityCameras">
     Security Cameras
 </p>
+<a href="/cctvAdd" id="AddCamera">
+    Add new camera    
+</a>
 <br>
 <br>
-<form action="/cctv/cctv" method="POST" id="cctv">
+{{#if cameras}}
 <div id="SecurityCameras">
     <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="col-sm-12 col-md-12 col-lg-12"> 
+            {{#each cameras}}
             <div>
-                <a href="/cctv1.handlebars">Security Camera #1</a>
+                <span>{{name}}</span>
                 <label class="switch">
                     <input type="checkbox">
                     <span class="slider round"></span>
                 </label>
             </div>
-            <div>
-                <span onclick="renameCamera(this)">Security Camera #2</span>
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-            <div>
-                <span onclick="renameCamera(this)">Security Camera #3</span>
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-            <div>
-                <span onclick="renameCamera(this)">Security Camera #4</span>
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4">
-            <div>
-                <span onclick="renameCamera(this)" name="name">Security Camera #5</span>
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-            <div>
-                <span onclick="renameCamera(this)" name="name">Security Camera #6</span>
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-            <div>
-                <span onclick="renameCamera(this)" name="name">Security Camera #7</span>
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-            <div>
-                <span onclick="renameCamera(this)" name="name">Security Camera #8</span>
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </div>
+            {{/each}}
         </div>
     </div>
 </div>
-<button type="submit" id="saveData">Save Camera Names</button>
-</form>
+{{else}}
+<p id="NoCameras">
+    No cameras added
+</p>
+{{/if}}
 <br>
 <br>
 <p id="Videos">

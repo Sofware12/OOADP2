@@ -1,6 +1,6 @@
 body {
     background-image: url(spaceback.jpg);
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     padding: 1em 2em;
     font-size: 18px;
@@ -9,7 +9,7 @@ body {
 #history {
     position: absolute;
     top: 130px;
-    left: 550px;
+    left: 580px;
     font-size: 70px;
     color: orange;
 }
@@ -17,7 +17,17 @@ body {
 #aircon {
     position: absolute;
     top: 150px;
-    left: 1100px;
+    left: 248px;
+    background-color: orange;
+    height: 8%;
+    width: 15%;
+    font-size: 30px;
+}
+
+#airconDelete {
+    position: absolute;
+    top: 150px;
+    left: 1065px;
     background-color: red;
     height: 8%;
     width: 15%;
