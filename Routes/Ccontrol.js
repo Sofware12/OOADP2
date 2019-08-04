@@ -35,56 +35,23 @@ router.post("/", (req, res) => {
 });
 
 
-router.get('/curtain/delete/:id', ensureAuthenticated, (req, res) => {
+router.get('/curtain/delete/:id', ensureAuthenticated, (req,res) => {
     let ccontrolId = req.params.id;
     ccontrol.findOne({
         where: {
             id: ccontrolId
         },
         attributes: ['id', 'id']
-    }).then((controls) => {
+    }).then((ccontrol) => {
         ccontrol.destroy({
             where: {
                 id: ccontrolId
             }
         }).then(() => {
             alertMessage(res, 'info', 'The history has been deleted', 'far fa-trash-alt', true);
-            res.redirect('/cControl/cCLogs');
+            res.redirect('/cControl');
         }).catch(err => console.log(err));
     });
 });
 
-// router.post('/curtainControl', (req, res) => {
-//     let Left = req.body.Left
-//     let Right = req.body.Right
-//     let preset = req.body.preset
-
-//     ccontrol.create({
-//         Left: Left,
-//         Right: Right,
-//         preset: preset
-//     }).then((Ccontrol) => {
-//         res.redirect('/curtainControl')
-//     }).catch(err => console.log(err))
-// })
-
-// router.get('/cCLogs', (req, res) => {
-//     ccontrol.findAll({
-//         raaw:true
-//     }).then(data => {
-//         console.log(data)
-//         res.render('curtain/cCLogs', {
-//             data: data
-//         })
-//     })
-// })
-
-// router.get('/delete', (req, res) => {
-//     let ccontrolId = req.params.id
-//     ccontrol.destroy({
-//         truncate: true
-//     }).then(() => {
-//         res.redirect('/curtain/cCLogs');
-//     })
-// })
 module.exports = router;

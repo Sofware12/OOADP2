@@ -1,5 +1,5 @@
 <div>
-    <form action="/cControl">
+    <form action="/curtainControl">
         <input type="submit" id="ccontrol" value="Back" />
     </form>
 </div>
@@ -7,32 +7,24 @@
 <div class="container">
     {{#if controls}}
     {{#each controls}}
-    <div>
-        <form action="/cControl/delete">
-            <input type="submit" id="ccontrolDel" value="Delete control hist">
-        </form>
-    </div>
-
     <table class="table">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">ID</th>
                 <th scope="col">Left</th>
                 <th scope="col">Right</th>
                 <th scope="col">Preset position</th>
             </tr>
         </thead>
         <tbody>
-            <th scope="row">1</th>
             <td>{{Left}}</td>
             <td>{{Right}}</td>
             <td>{{preset}}</td>
+            <a href="curtain/delete/{{id}}" data-toggle="confirmation" data-title="Confirm delete?">
+                <i class="far fa-trash-alt"></i>
+                Delete
+            </a>
         </tbody>
     </table>
-    <a href="/curtain/delete/{{id}}" data-toggle="confirmation" data-title="Confirm delete?">
-        <i class="far fa-trash-alt"></i>
-        Delete
-    </a>
     {{/each}}
     {{else}}
     <h1>There is no history of sets.</h1>

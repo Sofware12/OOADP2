@@ -6,7 +6,7 @@ const ensureAuthenticated = require('../helpers/auth')
 const alertMessage = require('../helpers/messanger')
 
 router.get('/cAmbience', (req, res) => {
-    Ambience.findAll ({
+    Ambience.findAll({
     }).then((ambiences) => {
         res.render('curtain/Logs', {
             ambiences
@@ -18,17 +18,15 @@ router.post("/cAmbience", (req, res) => {
     let hour = req.body.hour
     let minute = req.body.minute
     let second = req.body.second
-    let sound = req.body.sound
 
     Ambience.create({
         ambience,
         hour,
         minute,
         second,
-        sound
     }).then((CTimed) => {
         Ambience.findAll({
-            raw:true
+            raw: true
         }).then((ambiences) => {
             res.render('curtain/Logs', {
                 ambiences
@@ -45,16 +43,15 @@ router.get('/curtain/delete/:id', ensureAuthenticated, (req, res) => {
         },
         attributes: ['id', 'id']
     }).then((ambiences) => {
-            Ambience.destroy({
-                where: {
-                    id: ambienceId
-                }
-            }).then(() => {
-                alertMessage(res, 'info', 'The history has been deleted', 'far fa-trash-alt', true);
-                res.redirect('/Ctimed/cAmbience');
-            }).catch(err => console.log(err));
+        Ambience.destroy({
+            where: {
+                id: ambienceId
+            }
+        }).then(() => {
+            alertMessage(res, 'info', 'The history has been deleted', 'far fa-trash-alt', true);
+            res.redirect('/Ctimed/cAmbience');
+        }).catch(err => console.log(err));
     });
 });
-
 
 module.exports = router;

@@ -15,9 +15,6 @@ const CurtainAmbience = db.define('ambience', {
     },
     second: {
         type: Sequelize.INTEGER
-    },
-    sound: {
-        type: Sequelize.STRING
     }
 });
 
