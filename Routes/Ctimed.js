@@ -39,7 +39,7 @@ router.post("/cAmbience", (req, res) => {
 
 router.get('/curtain/delete/:id', ensureAuthenticated, (req, res) => {
     let ambienceId = req.params.id;
-    Ambibence.findOne({
+    Ambience.findOne({
         where: {
             id: ambienceId
         },

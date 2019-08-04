@@ -1,10 +1,5 @@
 <link rel="stylesheet" href="/css/aircon.css">
 
-<div id="add">
-    <input type="text" name="addaircon" value="Aircon #"></input>
-    <button onclick="addmoreaircon()">Add</button>
-</div>
-
 <div id="all">
     <h1>
         All Control
@@ -69,15 +64,6 @@
 <script>
     function submitValues() {
         alert("Submitted Changes");
-    }
-
-    function addmoreaircon() {
-        var header = document.createElement("header");
-        var h1 = document.createElement("h1");
-        newtext = document.getElementById("addaircon").value;
-        h1.textContent = newtext;
-        header.appendChild(h1);
-        document.body.appendChild(header);
     }
 
     function incrementValue() {
