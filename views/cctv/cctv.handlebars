@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="/css/cctv.css">
 </head>
 <body>
-<a id="CCTVControls" href="/cctv">
+<a id="CCTVControls" href="/cctv/cctv">
     CCTV Controls
 </a>
 <p id="SecurityCameras">
@@ -20,11 +20,7 @@
         <div class="col-sm-12 col-md-12 col-lg-12"> 
             {{#each cameras}}
             <div>
-                <span>{{name}}</span>
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
+                <a href="cctvEdit/{{id}}">{{name}}: {{state}}</a>
             </div>
             {{/each}}
         </div>

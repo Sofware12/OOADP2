@@ -1,15 +1,16 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="css/cctv.css">
+<link rel="stylesheet" type="text/css" href="/css/cctv.css">
 </head>
 <body>
 <a id="CCTVControls" href="/cctv/cctv">
     CCTV Controls
 </a>
 <p id="UploadVideos">
-    Add Camera
+    Edit Camera
 </p>
-<form action="cctv/cctvAdd" method="POST">
+<form action="/cctv/savecctvEdit/{{camera.id}}?_method=PUT" method="POST">
+    <input type="hidden" name="_method" value="PUT">
     <div class="row">
         <div class="col-sm-6 col-md-6 col-lg-6">
             <label id="cameraName">Camera Name:</label>

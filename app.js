@@ -29,7 +29,7 @@ const lightroute = require('./Routes/LightsDate1');
 const controlRoute = require('./Routes/Ccontrol');
 const timeRoute = require('./Routes/Ctimed');
 const cctvroute = require('./routes/cctv');
-const airconRoute = require('./Routes/aircon2')
+const airconRoute = require('./Routes/aircon2');
 
 smartlivingDB.setUpDB(false);
 /*
@@ -41,7 +41,7 @@ const app = express();
 app.use(fileUpload());
 
 app.post('/upload', function(req, res) {
-	if (Object.keys(req.files).length == 0) {
+	if (TypeError) {
 	  return res.status(400).send('No files were uploaded.');
 	}
   
@@ -49,16 +49,16 @@ app.post('/upload', function(req, res) {
 	let videoFootage = req.files.videoFootage;
   
 	// Use the mv() method to place the file somewhere on your server
-	videoFootage.mv('public/css/videoFootage.mp4', function(err) {
+	videoFootage.mv('public/videoFiles/videoFootage.mp4', function(err) {
 	  if (err)
 		return res.status(500).send(err);
   
-	  res.redirect('/cctv');
+	  res.redirect('/cctv/cctv');
 	});
 });
 
 app.get('/video', function(req, res) {
-	const path = 'public/css/videoFootage.mp4'
+	const path = 'public/videoFiles/videoFootage.mp4'
 	const stat = fs.statSync(path)
 	const fileSize = stat.size
 	const range = req.headers.range
@@ -100,7 +100,7 @@ app.get('/video', function(req, res) {
 app.engine('handlebars', exphbs({
 	defaultLayout: 'main', // Specify default template views/layout/main.handlebar 
 	partialsDir: path.join(__dirname, 'views/partials'),
-    layoutsDir: path.join(__dirname, 'views/layout')
+	layoutsDir: path.join(__dirname, 'views/layout'),
 }));
 app.set('view engine', 'handlebars');
 app.set('views',path.join(__dirname,'views'))
