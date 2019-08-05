@@ -40,20 +40,20 @@ const app = express();
 
 app.use(fileUpload());
 
-app.post('/upload', function(req, res) {
+app.post('/upload', function(req, res) {  
 	if (TypeError) {
-	  return res.status(400).send('No files were uploaded.');
+		return res.status(400).send('No files were uploaded.');
 	}
-  
+	
 	// The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
 	let videoFootage = req.files.videoFootage;
-  
+
 	// Use the mv() method to place the file somewhere on your server
-	videoFootage.mv('public/videoFiles/videoFootage.mp4', function(err) {
-	  if (err)
-		return res.status(500).send(err);
+	videoFootage.mv('public/videoFiles/videoFootage.mp4', function(err) {		
+		if (err)
+			return res.status(500).send(err);
   
-	  res.redirect('/cctv/cctv');
+	  	res.redirect('/cctv/cctv');
 	});
 });
 

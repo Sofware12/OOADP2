@@ -9,12 +9,12 @@
 <p id="UploadVideos">
     Edit Camera
 </p>
-<form action="/cctv/savecctvEdit/{{camera.id}}?_method=PUT" method="POST">
+<form action="/cctv/savecctvEdit/{{cameras.id}}?_method=PUT" method="POST">
     <input type="hidden" name="_method" value="PUT">
     <div class="row">
         <div class="col-sm-6 col-md-6 col-lg-6">
             <label id="cameraName">Camera Name:</label>
-            <input type="text" name="name"> 
+            <input type="text" name="name" value="{{cameras.name}}"> 
         </div>
         <div class="col-sm-6 col-md-6 col-lg-6">
             <label id="cameraName">Power:</label>

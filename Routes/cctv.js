@@ -36,10 +36,11 @@ router.get('/cctvEdit/:id', (req, res) => {
         });
     }).catch(err => console.log(err));
 });
-
-router.put('/savecctvEdit/:id', (req, res) => {
+    
+router.put('/cctv/savecctvEdit/:id', (req, res) => {
+    let id = req.params.id
     let name = req.body.name;
-    let state = req.body.state;    
+    let state = req.body.state;
     
     cameras.update({
         name: name,
