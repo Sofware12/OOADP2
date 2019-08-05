@@ -21,7 +21,7 @@
             {{#each cameras}}
             <div>
                 <a href="cctvEdit/{{id}}" style="font-size: 20px; color: cyan">{{name}}: {{state}}</a>
-                <a href="delete/{{id}}" style="font-size: 20px; color: red">&nbsp&nbsp&nbspDelete</a>
+                <a href="delete/{{id}}" style="font-size: 20px; color: red">Delete</a>
             </div>
             {{/each}}
         </div>
@@ -39,19 +39,14 @@
 </p>
 <br>
 <div class="row">
-    <div class="col-sm-12 col-md-4 col-lg-4">
+    <div class="col-sm-12 col-md-6 col-lg-6">
         <a id="ViewVideos" href="/viewVideos">
             View available videos
         </a>
     </div>
-    <div class="col-sm-12 col-md-4 col-lg-4">
+    <div class="col-sm-12 col-md-6 col-lg-6">
         <a id="UploadVideos" href="/uploadFile">
             Upload Videos
-        </a>
-    </div>
-    <div class="col-sm-12 col-md-4 col-lg-4">    
-        <a id="DeleteVideos" href="/deleteVideos">
-            Delete videos
         </a>
     </div>
 </div>
