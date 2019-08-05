@@ -37,21 +37,41 @@ router.get('/cctvEdit/:id', (req, res) => {
     }).catch(err => console.log(err));
 });
     
-router.put('/cctv/savecctvEdit/:id', (req, res) => {
+router.put('/savecctvEdit/:id', (req, res) => {
     let id = req.params.id
     let name = req.body.name;
     let state = req.body.state;
-    
+
     cameras.update({
         name: name,
         state: state,
     }, {
         where: {
-            id: req.params.id
+            id: id
         }
         }).then(() => {
             res.redirect('/cctv/cctv');
         }).catch(err => console.log(err));
+});
+
+router.get('/delete/:id', (req, res) => {
+    let id = req.params.id
+    
+    cameras.findOne({
+        where: {
+            id: id,
+        }
+    }).then((camera) => {
+        if (camera != null) {
+            camera.destroy({
+                where: {
+                    id: id
+                }
+            }).then (() => {
+                res.redirect('/cctv/cctv')
+            }).catch(err => console.log(err));
+        }
+    });
 });
 
 module.exports = router;

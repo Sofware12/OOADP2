@@ -20,7 +20,8 @@
         <div class="col-sm-12 col-md-12 col-lg-12"> 
             {{#each cameras}}
             <div>
-                <a href="cctvEdit/{{id}}">{{name}}: {{state}}</a>
+                <a href="cctvEdit/{{id}}" style="font-size: 20px; color: cyan">{{name}}: {{state}}</a>
+                <a href="delete/{{id}}" style="font-size: 20px; color: red">&nbsp&nbsp&nbspDelete</a>
             </div>
             {{/each}}
         </div>
