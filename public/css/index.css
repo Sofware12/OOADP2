@@ -1,0 +1,7 @@
+body {
+    background-image: url(spaceback.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1em 2em;
+    font-size: 18px;
+}
